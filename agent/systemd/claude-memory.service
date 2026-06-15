@@ -1,0 +1,11 @@
+[Unit]
+Description=Claude memory compaction (hierarchical journal)
+
+[Service]
+Type=oneshot
+User=root
+WorkingDirectory=/opt/trading/agent
+EnvironmentFile=/opt/trading/agent/.env
+ExecStart=/usr/bin/node /opt/trading/agent/memory.mjs
+StandardOutput=append:/opt/trading/logs/memory.log
+StandardError=append:/opt/trading/logs/memory.log

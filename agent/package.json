@@ -1,0 +1,15 @@
+{
+  "name": "claude-trading-agent",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Telegram bridge + persistent memory for Claude on Hetzner",
+  "scripts": {
+    "bot": "node bot.mjs",
+    "compact": "node memory.mjs",
+    "notify": "node notify.mjs"
+  },
+  "dependencies": {
+    "node-telegram-bot-api": "^0.66.0"
+  }
+}

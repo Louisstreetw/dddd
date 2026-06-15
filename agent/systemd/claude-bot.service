@@ -1,0 +1,17 @@
+[Unit]
+Description=Claude Telegram bot
+After=network.target
+
+[Service]
+Type=simple
+User=root
+WorkingDirectory=/opt/trading/agent
+EnvironmentFile=/opt/trading/agent/.env
+ExecStart=/usr/bin/node /opt/trading/agent/bot.mjs
+Restart=always
+RestartSec=10
+StandardOutput=append:/opt/trading/logs/bot.log
+StandardError=append:/opt/trading/logs/bot.log
+
+[Install]
+WantedBy=multi-user.target
