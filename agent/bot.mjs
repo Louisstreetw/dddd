@@ -46,17 +46,18 @@ async function logEntry(role, content) {
   await appendFile(JOURNAL, `\n## ${ts()} — Telegram\n\n**${role}:** ${content}\n`);
 }
 
-function askClaude(prompt) {
+const SESSION_MARKER = path.join(MEMORY_DIR, ".claude-session-active");
+
+const SYSTEM_NUDGE =
+  "Tu es l'agent personnel de Louis sur son serveur Hetzner. Reponds DIRECTEMENT et BRIEVEMENT a son message, comme un pote. Pas de menu d'options sauf s'il demande explicitement 'par ou je commence'. S'il te dit 'tu m'entends', tu dis juste 'oui'. S'il te demande un haiku, tu donnes un haiku. Reste conversationnel.";
+
+function spawnClaude(args) {
   return new Promise((resolve, reject) => {
-    const child = spawn(
-      "claude",
-      ["--dangerously-skip-permissions", "-p", prompt],
-      {
-        cwd: CLAUDE_CWD,
-        env: { ...process.env, CI: "1" },
-        stdio: ["ignore", "pipe", "pipe"],
-      }
-    );
+    const child = spawn("claude", args, {
+      cwd: CLAUDE_CWD,
+      env: { ...process.env, CI: "1" },
+      stdio: ["ignore", "pipe", "pipe"],
+    });
     let out = "";
     let err = "";
     child.stdout.on("data", (d) => (out += d.toString()));
@@ -66,6 +67,33 @@ function askClaude(prompt) {
       else reject(new Error(err || `claude exited with code ${code}`));
     });
   });
+}
+
+async function askClaude(prompt) {
+  const baseArgs = [
+    "--dangerously-skip-permissions",
+    "--append-system-prompt",
+    SYSTEM_NUDGE,
+    "-p",
+    prompt,
+  ];
+  const hasSession = existsSync(SESSION_MARKER);
+  try {
+    const args = hasSession ? ["--continue", ...baseArgs] : baseArgs;
+    const reply = await spawnClaude(args);
+    if (!hasSession) await writeFile(SESSION_MARKER, ts());
+    return reply;
+  } catch (e) {
+    if (
+      hasSession &&
+      /no.*(session|conversation)|cannot.*continue/i.test(e.message)
+    ) {
+      const reply = await spawnClaude(baseArgs);
+      await writeFile(SESSION_MARKER, ts());
+      return reply;
+    }
+    throw e;
+  }
 }
 
 function chunk(text, size = 3800) {
