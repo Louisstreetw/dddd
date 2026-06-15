@@ -4,9 +4,11 @@ After=network.target
 
 [Service]
 Type=simple
-User=root
+User=claude
+Group=claude
 WorkingDirectory=/opt/trading/agent
 EnvironmentFile=/opt/trading/agent/.env
+Environment=HOME=/home/claude
 ExecStart=/usr/bin/node /opt/trading/agent/bot.mjs
 Restart=always
 RestartSec=10
