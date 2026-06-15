@@ -1,9 +1,9 @@
 [Unit]
-Description=Run auto-deploy every 5 minutes
+Description=Run auto-deploy every minute
 
 [Timer]
-OnBootSec=2min
-OnUnitActiveSec=5min
+OnBootSec=30s
+OnUnitActiveSec=1min
 Unit=claude-deploy.service
 
 [Install]
