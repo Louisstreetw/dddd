@@ -138,6 +138,59 @@ async function handleUserText(chatId, sourceLabel, text) {
   }
 }
 
+bot.onText(/^\/notify[-_]token\s+(\S+)/i, async (msg, match) => {
+  const chatId = String(msg.chat.id);
+  if (chatId !== ownerChatId) {
+    return bot.sendMessage(chatId, "Bot prive.");
+  }
+  const newToken = match[1].trim();
+  if (!/^\d+:[A-Za-z0-9_-]{30,}$/.test(newToken)) {
+    return bot.sendMessage(
+      chatId,
+      "Format de token invalide. Attendu: 1234567890:AAAxxxxxxx..."
+    );
+  }
+  try {
+    const envPath = "/opt/trading/agent/.env";
+    let env = "";
+    try {
+      env = await readFile(envPath, "utf8");
+    } catch {}
+    const lines = env.split("\n").filter((l) => !l.startsWith("NOTIFY_TOKEN="));
+    lines.push(`NOTIFY_TOKEN=${newToken}`);
+    await writeFile(envPath, lines.filter(Boolean).join("\n") + "\n");
+
+    await new Promise((resolve, reject) => {
+      const child = spawn(
+        "sudo",
+        [
+          "bash",
+          "-c",
+          "systemctl daemon-reload && systemctl enable --now claude-notify-bot.service && systemctl restart claude-notify-bot.service",
+        ],
+        { stdio: ["ignore", "pipe", "pipe"] }
+      );
+      let err = "";
+      child.stderr.on("data", (d) => (err += d.toString()));
+      child.on("close", (c) =>
+        c === 0 ? resolve() : reject(new Error(err || `exit ${c}`))
+      );
+    });
+
+    await bot.sendMessage(
+      chatId,
+      "✅ Notify-bot configure et demarre.\n\n" +
+        "Maintenant va sur ton nouveau bot de notifications, tape /start pour le claim,\n" +
+        "et toutes les futures notifs serveur arriveront la-bas (et plus ici)."
+    );
+  } catch (e) {
+    await bot.sendMessage(
+      chatId,
+      `Erreur lors du setup notify-bot: ${e.message.slice(0, 400)}`
+    );
+  }
+});
+
 bot.onText(/^\/start/, async (msg) => {
   const chatId = String(msg.chat.id);
   if (!ownerChatId) {

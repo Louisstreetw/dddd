@@ -40,7 +40,7 @@ log "update detected, deploying: $LOCAL -> $REMOTE"
 git pull --quiet --rebase=false
 
 # Copy updated agent files (only those that exist in the repo)
-for f in bot.mjs transcribe.py notify.mjs memory.mjs; do
+for f in bot.mjs notify-bot.mjs transcribe.py notify.mjs memory.mjs; do
   if [[ -f "agent/$f" ]]; then
     cp -f "agent/$f" "$AGENT_DST/$f"
   fi
@@ -52,7 +52,7 @@ if [[ -f CLAUDE.md ]]; then
 fi
 
 # Refresh systemd unit files if changed
-for unit in claude-bot.service claude-memory.service claude-memory.timer claude-deploy.service claude-deploy.timer; do
+for unit in claude-bot.service claude-notify-bot.service claude-memory.service claude-memory.timer claude-deploy.service claude-deploy.timer; do
   if [[ -f "agent/systemd/$unit" ]] && ! cmp -s "agent/systemd/$unit" "/etc/systemd/system/$unit" 2>/dev/null; then
     cp -f "agent/systemd/$unit" "/etc/systemd/system/$unit"
     systemctl daemon-reload

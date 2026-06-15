@@ -1,0 +1,19 @@
+[Unit]
+Description=Claude notification-only Telegram bot
+After=network.target
+
+[Service]
+Type=simple
+User=claude
+Group=claude
+WorkingDirectory=/opt/trading/agent
+EnvironmentFile=/opt/trading/agent/.env
+Environment=HOME=/home/claude
+ExecStart=/usr/bin/node /opt/trading/agent/notify-bot.mjs
+Restart=always
+RestartSec=10
+StandardOutput=append:/opt/trading/logs/notify-bot.log
+StandardError=append:/opt/trading/logs/notify-bot.log
+
+[Install]
+WantedBy=multi-user.target
