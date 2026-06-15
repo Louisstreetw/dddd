@@ -1,22 +1,12 @@
 import { readFile } from "node:fs/promises";
-import { existsSync } from "node:fs";
 import path from "node:path";
 
+const TOKEN = process.env.TELEGRAM_TOKEN;
 const MEMORY_DIR = process.env.MEMORY_DIR || "/root";
-const MAIN_TOKEN = process.env.TELEGRAM_TOKEN;
-const NOTIFY_TOKEN = process.env.NOTIFY_TOKEN;
-const MAIN_OWNER = path.join(MEMORY_DIR, ".telegram-owner");
-const NOTIFY_OWNER = path.join(MEMORY_DIR, ".telegram-notify-owner");
+const OWNER_FILE = path.join(MEMORY_DIR, ".telegram-owner");
 
-let token, ownerFile;
-if (NOTIFY_TOKEN && existsSync(NOTIFY_OWNER)) {
-  token = NOTIFY_TOKEN;
-  ownerFile = NOTIFY_OWNER;
-} else if (MAIN_TOKEN && existsSync(MAIN_OWNER)) {
-  token = MAIN_TOKEN;
-  ownerFile = MAIN_OWNER;
-} else {
-  console.error("No bot configured to receive notifications");
+if (!TOKEN) {
+  console.error("TELEGRAM_TOKEN missing");
   process.exit(1);
 }
 
@@ -26,9 +16,9 @@ if (!message) {
   process.exit(1);
 }
 
-const chatId = (await readFile(ownerFile, "utf8")).trim();
+const chatId = (await readFile(OWNER_FILE, "utf8")).trim();
 
-const res = await fetch(`https://api.telegram.org/bot${token}/sendMessage`, {
+const res = await fetch(`https://api.telegram.org/bot${TOKEN}/sendMessage`, {
   method: "POST",
   headers: { "content-type": "application/json" },
   body: JSON.stringify({ chat_id: chatId, text: message }),
