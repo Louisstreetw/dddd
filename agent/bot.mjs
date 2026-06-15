@@ -1,6 +1,6 @@
 import TelegramBot from "node-telegram-bot-api";
 import { spawn } from "node:child_process";
-import { appendFile, readFile, writeFile, mkdir } from "node:fs/promises";
+import { appendFile, readFile, writeFile, mkdir, unlink } from "node:fs/promises";
 import { existsSync } from "node:fs";
 import path from "node:path";
 
@@ -9,6 +9,10 @@ const MEMORY_DIR = process.env.MEMORY_DIR || "/root";
 const OWNER_FILE = path.join(MEMORY_DIR, ".telegram-owner");
 const JOURNAL = path.join(MEMORY_DIR, "journal-recent.md");
 const CLAUDE_CWD = MEMORY_DIR;
+const WHISPER_PYTHON =
+  process.env.WHISPER_PYTHON || "/opt/trading/whisper-venv/bin/python3";
+const TRANSCRIBE_SCRIPT =
+  process.env.TRANSCRIBE_SCRIPT || "/opt/trading/agent/transcribe.py";
 
 if (!TOKEN) {
   console.error("TELEGRAM_TOKEN missing in environment");
@@ -70,6 +74,42 @@ function chunk(text, size = 3800) {
   return parts;
 }
 
+function transcribeAudio(audioPath) {
+  return new Promise((resolve, reject) => {
+    const child = spawn(WHISPER_PYTHON, [TRANSCRIBE_SCRIPT, audioPath, "fr"], {
+      stdio: ["ignore", "pipe", "pipe"],
+    });
+    let out = "";
+    let err = "";
+    child.stdout.on("data", (d) => (out += d.toString()));
+    child.stderr.on("data", (d) => (err += d.toString()));
+    child.on("close", (code) => {
+      if (code === 0) resolve(out.trim());
+      else reject(new Error(err || `transcribe exited ${code}`));
+    });
+  });
+}
+
+async function handleUserText(chatId, sourceLabel, text) {
+  await logEntry(sourceLabel, text);
+  bot.sendChatAction(chatId, "typing").catch(() => {});
+
+  try {
+    const reply = await askClaude(text);
+    if (!reply) {
+      await bot.sendMessage(chatId, "(reponse vide de Claude)");
+      return;
+    }
+    await logEntry("Claude", reply);
+    for (const part of chunk(reply)) {
+      await bot.sendMessage(chatId, part);
+    }
+  } catch (e) {
+    console.error("[bot] claude error", e);
+    await bot.sendMessage(chatId, `Erreur Claude: ${e.message.slice(0, 500)}`);
+  }
+}
+
 bot.onText(/^\/start/, async (msg) => {
   const chatId = String(msg.chat.id);
   if (!ownerChatId) {
@@ -91,6 +131,7 @@ bot.onText(/^\/start/, async (msg) => {
 
 bot.on("message", async (msg) => {
   if (msg.text?.startsWith("/start")) return;
+  if (msg.voice || msg.audio) return;
   const chatId = String(msg.chat.id);
   if (!ownerChatId) {
     await bot.sendMessage(chatId, "Envoie /start d'abord pour claim ce bot.");
@@ -102,23 +143,41 @@ bot.on("message", async (msg) => {
   }
   const text = msg.text?.trim();
   if (!text) return;
+  await handleUserText(chatId, "Louis", text);
+});
 
-  await logEntry("Louis", text);
-  bot.sendChatAction(chatId, "typing").catch(() => {});
+bot.on("voice", async (msg) => {
+  const chatId = String(msg.chat.id);
+  if (chatId !== ownerChatId) {
+    if (ownerChatId) await bot.sendMessage(chatId, "Bot prive.");
+    return;
+  }
+
+  const voice = msg.voice;
+  const tmpPath = `/tmp/voice-${voice.file_unique_id}.ogg`;
 
   try {
-    const reply = await askClaude(text);
-    if (!reply) {
-      await bot.sendMessage(chatId, "(reponse vide de Claude)");
+    bot.sendChatAction(chatId, "typing").catch(() => {});
+
+    const fileLink = await bot.getFileLink(voice.file_id);
+    const res = await fetch(fileLink);
+    if (!res.ok) throw new Error(`download failed: ${res.status}`);
+    const buf = Buffer.from(await res.arrayBuffer());
+    await writeFile(tmpPath, buf);
+
+    const transcript = await transcribeAudio(tmpPath);
+    if (!transcript) {
+      await bot.sendMessage(chatId, "(vocal vide ou inaudible)");
       return;
     }
-    await logEntry("Claude", reply);
-    for (const part of chunk(reply)) {
-      await bot.sendMessage(chatId, part);
-    }
+
+    await bot.sendMessage(chatId, `🎙️ "${transcript}"`);
+    await handleUserText(chatId, "Louis (vocal)", transcript);
   } catch (e) {
-    console.error("[bot] claude error", e);
-    await bot.sendMessage(chatId, `Erreur Claude: ${e.message.slice(0, 500)}`);
+    console.error("[bot] voice error", e);
+    await bot.sendMessage(chatId, `Erreur vocal: ${e.message.slice(0, 500)}`);
+  } finally {
+    await unlink(tmpPath).catch(() => {});
   }
 });
 
