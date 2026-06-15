@@ -69,38 +69,7 @@ function spawnClaude(args) {
   });
 }
 
-const REPO_DIR = process.env.REPO_DIR || "/opt/trading/repo";
-const SYNC_FILES = ["CLAUDE.md", "sync/web-chat.md"];
-
-function syncFromRepo() {
-  return new Promise((resolve) => {
-    const pull = spawn("git", ["pull", "--quiet"], {
-      cwd: REPO_DIR,
-      stdio: "ignore",
-    });
-    const t = setTimeout(() => {
-      pull.kill();
-      resolve();
-    }, 5000);
-    pull.on("close", async () => {
-      clearTimeout(t);
-      for (const rel of SYNC_FILES) {
-        const src = path.join(REPO_DIR, rel);
-        const dst = path.join(MEMORY_DIR, path.basename(rel));
-        try {
-          if (existsSync(src)) {
-            const data = await readFile(src);
-            await writeFile(dst, data);
-          }
-        } catch {}
-      }
-      resolve();
-    });
-  });
-}
-
 async function askClaude(prompt) {
-  await syncFromRepo();
   const baseArgs = [
     "--dangerously-skip-permissions",
     "--append-system-prompt",

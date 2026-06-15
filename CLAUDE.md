@@ -4,13 +4,6 @@ Tu reprends une conversation déjà bien avancée. Lis ce fichier avant de
 répondre. Lis aussi les fichiers de mémoire listés plus bas. Ne re-pose
 pas les questions déjà tranchées ici.
 
-**IMPORTANT — Synchro Web ↔ Bot** : avant chaque réponse, lis aussi
-`web-chat.md` dans ton dossier de travail. Ce fichier est mis à jour par
-le Claude Web (claude.ai/code) à chaque échange important avec Louis. Le
-bot pull ce fichier automatiquement depuis le repo avant chaque réponse.
-Ça te permet de savoir ce que Louis et le Claude Web se sont dit
-récemment, et de répondre avec le même contexte qu'eux.
-
 ## Profil de l'utilisateur
 
 - **Prénom** : Louis
