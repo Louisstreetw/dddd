@@ -46,7 +46,7 @@ function askClaude(prompt) {
   return new Promise((resolve, reject) => {
     const child = spawn(
       "claude",
-      ["--permission-mode", "bypassPermissions", "-p", prompt],
+      ["--dangerously-skip-permissions", "-p", prompt],
       {
         cwd: CLAUDE_CWD,
         env: { ...process.env, CI: "1" },
