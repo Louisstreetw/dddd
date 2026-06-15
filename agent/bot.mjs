@@ -44,10 +44,20 @@ async function logEntry(role, content) {
 
 function askClaude(prompt) {
   return new Promise((resolve, reject) => {
-    const child = spawn("claude", ["-p", prompt], {
-      cwd: CLAUDE_CWD,
-      env: { ...process.env, CI: "1" },
-    });
+    const child = spawn(
+      "claude",
+      [
+        "--dangerously-skip-permissions",
+        "--permission-mode",
+        "bypassPermissions",
+        "-p",
+        prompt,
+      ],
+      {
+        cwd: CLAUDE_CWD,
+        env: { ...process.env, CI: "1" },
+      }
+    );
     let out = "";
     let err = "";
     child.stdout.on("data", (d) => (out += d.toString()));
