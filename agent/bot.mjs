@@ -51,7 +51,7 @@ const SESSION_MARKER = path.join(MEMORY_DIR, ".claude-session-active");
 const SYSTEM_NUDGE =
   "Tu es l'agent personnel de Louis sur son serveur Hetzner. Reponds DIRECTEMENT et BRIEVEMENT a son message, comme un pote. Pas de menu d'options sauf s'il demande explicitement 'par ou je commence'. S'il te dit 'tu m'entends', tu dis juste 'oui'. S'il te demande un haiku, tu donnes un haiku. Reste conversationnel.";
 
-function spawnClaude(args) {
+function spawnClaude(args, onPartial) {
   return new Promise((resolve, reject) => {
     const child = spawn("claude", args, {
       cwd: CLAUDE_CWD,
@@ -60,16 +60,33 @@ function spawnClaude(args) {
     });
     let out = "";
     let err = "";
-    child.stdout.on("data", (d) => (out += d.toString()));
+    let lastFlush = Date.now();
+    let pending = null;
+    child.stdout.on("data", (d) => {
+      out += d.toString();
+      if (!onPartial) return;
+      const now = Date.now();
+      if (now - lastFlush >= 1500) {
+        lastFlush = now;
+        onPartial(out);
+      } else if (!pending) {
+        pending = setTimeout(() => {
+          pending = null;
+          lastFlush = Date.now();
+          onPartial(out);
+        }, 1500 - (now - lastFlush));
+      }
+    });
     child.stderr.on("data", (d) => (err += d.toString()));
     child.on("close", (code) => {
+      if (pending) clearTimeout(pending);
       if (code === 0) resolve(out.trim());
       else reject(new Error(err || `claude exited with code ${code}`));
     });
   });
 }
 
-async function askClaude(prompt) {
+async function askClaude(prompt, onPartial) {
   const baseArgs = [
     "--dangerously-skip-permissions",
     "--append-system-prompt",
@@ -80,7 +97,7 @@ async function askClaude(prompt) {
   const hasSession = existsSync(SESSION_MARKER);
   try {
     const args = hasSession ? ["--continue", ...baseArgs] : baseArgs;
-    const reply = await spawnClaude(args);
+    const reply = await spawnClaude(args, onPartial);
     if (!hasSession) await writeFile(SESSION_MARKER, ts());
     return reply;
   } catch (e) {
@@ -88,7 +105,7 @@ async function askClaude(prompt) {
       hasSession &&
       /no.*(session|conversation)|cannot.*continue/i.test(e.message)
     ) {
-      const reply = await spawnClaude(baseArgs);
+      const reply = await spawnClaude(baseArgs, onPartial);
       await writeFile(SESSION_MARKER, ts());
       return reply;
     }
@@ -122,19 +139,56 @@ async function handleUserText(chatId, sourceLabel, text) {
   await logEntry(sourceLabel, text);
   bot.sendChatAction(chatId, "typing").catch(() => {});
 
+  const placeholder = await bot.sendMessage(chatId, "💭 …");
+  const msgId = placeholder.message_id;
+  let lastEdited = "";
+
+  const onPartial = async (current) => {
+    const visible = current.slice(0, 4000);
+    if (visible.length < 5 || visible === lastEdited) return;
+    lastEdited = visible;
+    bot.sendChatAction(chatId, "typing").catch(() => {});
+    try {
+      await bot.editMessageText(visible, {
+        chat_id: chatId,
+        message_id: msgId,
+      });
+    } catch {
+      // Ignore "message not modified" or rate-limit errors
+    }
+  };
+
   try {
-    const reply = await askClaude(text);
+    const reply = await askClaude(text, onPartial);
     if (!reply) {
-      await bot.sendMessage(chatId, "(reponse vide de Claude)");
+      await bot
+        .editMessageText("(reponse vide de Claude)", {
+          chat_id: chatId,
+          message_id: msgId,
+        })
+        .catch(() => bot.sendMessage(chatId, "(reponse vide de Claude)"));
       return;
     }
     await logEntry("Claude", reply);
-    for (const part of chunk(reply)) {
-      await bot.sendMessage(chatId, part);
+
+    const parts = chunk(reply);
+    try {
+      await bot.editMessageText(parts[0], {
+        chat_id: chatId,
+        message_id: msgId,
+      });
+    } catch {
+      await bot.sendMessage(chatId, parts[0]);
+    }
+    for (let i = 1; i < parts.length; i++) {
+      await bot.sendMessage(chatId, parts[i]);
     }
   } catch (e) {
     console.error("[bot] claude error", e);
-    await bot.sendMessage(chatId, `Erreur Claude: ${e.message.slice(0, 500)}`);
+    const errText = `Erreur Claude: ${e.message.slice(0, 500)}`;
+    await bot
+      .editMessageText(errText, { chat_id: chatId, message_id: msgId })
+      .catch(() => bot.sendMessage(chatId, errText));
   }
 }
 
