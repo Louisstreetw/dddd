@@ -1,24 +1,37 @@
-# Regles metier de Louis
+# Règles métier de Louis
 
-Les règles ci-dessous sont la source de vérité pour les décisions
-automatiques. Quand Louis te dit "change la regle X", tu mets a jour
-ce fichier puis tu confirmes.
+Source de vérité pour les notifications et décisions automatiques.
+Quand Louis te dit "change la règle X", tu mets à jour ce fichier
+puis tu confirmes.
 
-## Meta Ads — auto-pilotage
-- *(a configurer avec Louis lors du setup Meta Ads)*
-- Exemples a proposer :
-  - Si ROAS d'une campagne > 3.0 sur 24h → augmente budget de +20%
-  - Si ROAS < 2.0 sur 24h → baisse budget de -50%
-  - Si ROAS < 1.5 sur 24h → pause la campagne et ping en urgence
-  - Budget max par jour par campagne : 200 EUR (a confirmer)
+## Notifications temps réel (event-driven)
 
-## Shopify
-- *(a configurer)*
+| Type | Condition | Message à envoyer |
+|---|---|---|
+| 📦 Stock bas | Produit Shopify avec stock < 10 unités | `📦 Stock bas : [nom_produit] = X unités` |
+| ⚠️ ROAS faible | Campagne Meta avec ROAS < 2 | `⚠️ ROAS faible : [nom_campagne] = X ROAS` |
+| 🏆 Créa gagnante | Adset Meta avec ROAS ≥ 4 | `🏆 Créa gagnante : [nom_adset] = X ROAS` |
 
-## Crypto smart-money
-- *(a configurer)*
+## Notifications programmées (timer-based, heure de Paris)
 
-## Communication
-- Recap quotidien sur Telegram a 09:00 (heure de Paris)
-- Pings instantanes pour : pause de campagne, anomalie de vente,
-  baleine crypto qui bouge, stock critique.
+| Quand | Type | Contenu |
+|---|---|---|
+| Chaque jour 09:00 | Bilan veille | Revenue, spend, ROAS, commandes, AOV, top/sous-perf campagnes |
+| Chaque jour 12:00 | Mid-day check | Revenue du matin, spend du matin, ROAS du matin |
+| Chaque jour 20:00 | Récap journée | Revenue, spend, ROAS, commandes du jour |
+| Dimanche 20:00 | Bilan hebdo | Totaux semaine + comparaison vs semaine précédente |
+| 1er du mois 09:00 | Récap mois | Totaux mois précédent + comparaison vs M-1 |
+
+## Bot de notifications
+
+- Notifications envoyées via un **bot Telegram dédié** (séparé d'@AssistantEcom_bot)
+- Bot dédié = pas de discussion possible, juste réception
+- Token stocké dans `/opt/trading/agent/.env` sous `NOTIFY_TOKEN=`
+
+## Comptes à connecter (pour activer les notifs)
+
+- [ ] Shopify Admin API (pour stock + revenue + commandes)
+- [ ] Meta Marketing API (pour ROAS + spend + créatives)
+
+Tant que ces 2 comptes ne sont pas connectés, les notifs ne peuvent
+pas se déclencher.
