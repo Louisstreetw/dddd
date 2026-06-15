@@ -199,7 +199,6 @@ bot.on("voice", async (msg) => {
       return;
     }
 
-    await bot.sendMessage(chatId, `🎙️ "${transcript}"`);
     await handleUserText(chatId, "Louis (vocal)", transcript);
   } catch (e) {
     console.error("[bot] voice error", e);
