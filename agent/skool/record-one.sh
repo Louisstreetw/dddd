@@ -8,9 +8,14 @@ URL="${1:?usage: record-one.sh <URL> [name]}"
 NAME="${2:-lesson-$(date +%s)}"
 SAFE_NAME=$(echo "$NAME" | tr ' ' '_' | tr -cd 'A-Za-z0-9._-')
 
+SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
 REC_DIR=/home/claude/skool/recordings
 LOG=/opt/trading/logs/studio.log
 AUDIO="$REC_DIR/$SAFE_NAME.wav"
+
+FFMPEG_PID=0
+PW_PID=0
+XVFB_PID=0
 
 mkdir -p "$REC_DIR"
 
@@ -44,11 +49,11 @@ pactl set-default-sink recorder 2>>"$LOG" || true
 
 cleanup() {
   log "Cleanup..."
-  kill "$FFMPEG_PID" 2>/dev/null || true
-  kill "$PW_PID" 2>/dev/null || true
+  [[ "$FFMPEG_PID" -gt 0 ]] && kill "$FFMPEG_PID" 2>/dev/null || true
+  [[ "$PW_PID" -gt 0 ]] && kill "$PW_PID" 2>/dev/null || true
   sleep 1
-  kill -9 "$FFMPEG_PID" 2>/dev/null || true
-  kill -9 "$PW_PID" 2>/dev/null || true
+  [[ "$FFMPEG_PID" -gt 0 ]] && kill -9 "$FFMPEG_PID" 2>/dev/null || true
+  [[ "$PW_PID" -gt 0 ]] && kill -9 "$PW_PID" 2>/dev/null || true
   pkill -u "$(whoami)" -f "Xvfb :99" 2>/dev/null || true
   pulseaudio --kill 2>/dev/null || true
 }
@@ -58,7 +63,7 @@ trap cleanup EXIT
 # It writes the detected duration to /tmp/duration.txt then keeps the page open.
 log "Launching Playwright..."
 DURATION_FILE=/tmp/duration-$$.txt
-URL="$URL" DURATION_FILE="$DURATION_FILE" node /opt/trading/agent/skool/record-one.mjs >>"$LOG" 2>&1 &
+URL="$URL" DURATION_FILE="$DURATION_FILE" node "$SCRIPT_DIR/record-one.mjs" >>"$LOG" 2>&1 &
 PW_PID=$!
 
 # Wait for duration to be detected (up to 60s)
