@@ -1,0 +1,3 @@
+# Intermediate book extracts (only keep MD synthesis)
+books/*.epub
+books/*.txt
