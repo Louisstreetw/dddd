@@ -23,107 +23,134 @@ const context = await browser.newContext({
   storageState: STATE_FILE,
   userAgent:
     "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
-  viewport: { width: 1280, height: 1600 },
+  viewport: { width: 1280, height: 1800 },
   locale: "fr-FR",
 });
 const page = await context.newPage();
 
-async function findAndClickModule(name) {
+async function loadClassroom() {
   await page.goto(CLASSROOM_URL, { waitUntil: "domcontentloaded", timeout: 30000 });
   await page.waitForTimeout(8000);
-
-  // Scroll to load all cards
   for (let i = 0; i < 6; i++) {
     await page.mouse.wheel(0, 600);
-    await page.waitForTimeout(600);
+    await page.waitForTimeout(500);
   }
   await page.evaluate(() => window.scrollTo(0, 0));
   await page.waitForTimeout(1500);
+}
 
-  // Try to find a clickable element whose text contains the name
-  const clicked = await page.evaluate((target) => {
+async function findCardCoords(name) {
+  return page.evaluate((target) => {
     const needle = target.toLowerCase();
     const all = document.querySelectorAll("*");
-    let bestEl = null;
-    let bestDepth = Infinity;
-
+    let best = null;
+    let minDepth = Infinity;
     for (const el of all) {
       const text = (el.textContent || "").trim().toLowerCase();
-      if (!text.includes(needle)) continue;
-      // Prefer the smallest element that contains the target text
+      if (text !== needle) continue; // exact match for the title
       const depth = el.querySelectorAll("*").length;
-      if (depth < bestDepth) {
-        bestDepth = depth;
-        bestEl = el;
+      if (depth < minDepth) {
+        minDepth = depth;
+        best = el;
       }
     }
+    if (!best) return null;
 
-    if (!bestEl) return { ok: false, reason: "not_found" };
-
-    // Find the nearest clickable ancestor (a, button, role=button, cursor:pointer)
-    let node = bestEl;
+    // Walk up to find a card-sized clickable container
+    let node = best;
+    let card = best;
     while (node && node !== document.body) {
-      const tag = node.tagName;
-      const style = window.getComputedStyle(node);
-      const clickable =
-        tag === "A" ||
-        tag === "BUTTON" ||
-        node.getAttribute("role") === "button" ||
-        node.onclick != null ||
-        style.cursor === "pointer";
-      if (clickable) {
-        // Scroll into view and mark for click
-        node.scrollIntoView({ block: "center" });
-        node.setAttribute("data-claude-clicktarget", "1");
-        return {
-          ok: true,
-          tag: node.tagName,
-          href: node.href || null,
-          text: (node.textContent || "").trim().slice(0, 200),
-        };
+      const rect = node.getBoundingClientRect();
+      if (rect.width > 200 && rect.height > 150) {
+        card = node;
+        const style = getComputedStyle(node);
+        if (
+          style.cursor === "pointer" ||
+          node.tagName === "A" ||
+          node.tagName === "ARTICLE"
+        ) {
+          break;
+        }
       }
       node = node.parentElement;
     }
-    return { ok: false, reason: "no_clickable_parent" };
+
+    card.scrollIntoView({ block: "center", behavior: "instant" });
+    const rect = card.getBoundingClientRect();
+    return {
+      x: rect.x + rect.width / 2,
+      y: rect.y + rect.height / 2,
+      width: rect.width,
+      height: rect.height,
+      tag: card.tagName,
+      cls: (card.className || "").toString().slice(0, 80),
+    };
   }, name);
+}
 
-  if (!clicked.ok) {
-    console.error(`  Pas trouve (${clicked.reason}): ${name}`);
-    return null;
+async function extractLessons() {
+  // After landing on a module page, scroll and grab all lesson links
+  for (let i = 0; i < 6; i++) {
+    await page.mouse.wheel(0, 500);
+    await page.waitForTimeout(500);
   }
-  console.log(`  Match: <${clicked.tag}> "${clicked.text.slice(0, 80)}"`);
+  await page.evaluate(() => window.scrollTo(0, 0));
+  await page.waitForTimeout(1000);
 
-  // If we already have the href, navigate directly
-  if (clicked.href) {
-    console.log(`  Navigation directe: ${clicked.href}`);
-    await page.goto(clicked.href, { waitUntil: "domcontentloaded" });
-  } else {
-    console.log(`  Click sur l'element marque...`);
-    await page.click('[data-claude-clicktarget="1"]');
-  }
-
-  await page.waitForTimeout(6000);
-  return page.url();
+  return page.evaluate(() => {
+    const items = [];
+    for (const a of document.querySelectorAll("a[href]")) {
+      const href = a.href;
+      const text = (a.textContent || "").trim();
+      if (
+        /skool\.com\/[^/]+\/classroom\/[^/]+\/[^/?#]+/.test(href) &&
+        text &&
+        !href.endsWith("/classroom")
+      ) {
+        items.push({ title: text.slice(0, 200), href });
+      }
+    }
+    return Array.from(new Map(items.map((i) => [i.href, i])).values());
+  });
 }
 
 const results = [];
 
 for (const moduleName of TARGET_MODULES) {
   console.log(`\n=== Module: ${moduleName} ===`);
-  const moduleUrl = await findAndClickModule(moduleName);
-  if (!moduleUrl) {
+  await loadClassroom();
+  await page.waitForTimeout(500);
+
+  const coords = await findCardCoords(moduleName);
+  if (!coords) {
+    console.error("  Pas trouve");
     results.push({ module: moduleName, error: "not_found" });
     continue;
   }
-  console.log(`  URL module: ${moduleUrl}`);
+  console.log(
+    `  Card <${coords.tag}> ${Math.round(coords.width)}x${Math.round(coords.height)} @ (${Math.round(coords.x)}, ${Math.round(coords.y)})`
+  );
 
-  // Scroll the module page to load lessons
-  for (let i = 0; i < 6; i++) {
-    await page.mouse.wheel(0, 500);
-    await page.waitForTimeout(700);
+  // Real mouse click at the card center
+  const urlBefore = page.url();
+  await page.mouse.move(coords.x, coords.y);
+  await page.waitForTimeout(300);
+  await page.mouse.click(coords.x, coords.y);
+
+  // Wait for URL to change
+  for (let i = 0; i < 20; i++) {
+    if (page.url() !== urlBefore) break;
+    await page.waitForTimeout(500);
   }
-  await page.evaluate(() => window.scrollTo(0, 0));
-  await page.waitForTimeout(1500);
+  await page.waitForTimeout(3000);
+
+  const moduleUrl = page.url();
+  if (moduleUrl === urlBefore) {
+    console.error("  Click sans effet (URL inchangee)");
+    results.push({ module: moduleName, error: "click_no_effect" });
+    continue;
+  }
+  console.log(`  Module ouvert: ${moduleUrl}`);
 
   const slug = moduleName.toLowerCase().replace(/\s+/g, "-");
   await page.screenshot({
@@ -131,20 +158,7 @@ for (const moduleName of TARGET_MODULES) {
     fullPage: true,
   });
 
-  // Extract lessons (links inside the module page)
-  const lessons = await page.evaluate(() => {
-    const items = [];
-    for (const a of document.querySelectorAll("a[href]")) {
-      const href = a.href;
-      const text = (a.textContent || "").trim();
-      // Skool lesson URLs have pattern /classroom/<module>/<lesson>
-      if (/skool\.com\/.+\/classroom\/.+\/.+/.test(href) && text) {
-        items.push({ title: text.slice(0, 200), href });
-      }
-    }
-    return Array.from(new Map(items.map((i) => [i.href, i])).values());
-  });
-
+  const lessons = await extractLessons();
   console.log(`  Lecons trouvees: ${lessons.length}`);
   results.push({ module: moduleName, url: moduleUrl, lessons });
 }
