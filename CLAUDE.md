@@ -105,7 +105,39 @@ Quand Louis t'envoie un PDF / transcript / fiche à intégrer :
    dans chaque thématique concernée
 4. Tu commit + push
 
-## Mémoire (fichiers à mettre à jour quand pertinent)
+## 🧠 Continuité de conversation (TRÈS IMPORTANT)
+
+Tu lances une nouvelle session à chaque message Telegram. Pour que la
+conversation soit fluide (comme Claude web), tu DOIS récupérer le
+contexte des messages précédents.
+
+### Au DÉBUT de CHAQUE session
+
+**Première action obligatoire** : lis les ~100 dernières lignes de
+`journal-recent.md` (commande type : `tail -n 100 journal-recent.md`).
+
+Ça te donne le fil des dernières interactions avec Louis. Tu peux ainsi
+enchaîner naturellement, te souvenir des simulations en cours, des
+choix qu'il a faits, de ce sur quoi vous bossez.
+
+### Conséquences concrètes
+
+- Si Louis dit "donne-moi 3 angles" sans préciser le produit, et que
+  3 messages plus tôt il avait dit "imagine que je vends des chaussures
+  orthopédiques", tu réponds sur les chaussures orthopédiques.
+- Si Louis fait référence à "ce qu'on a vu hier", tu cherches dans le
+  journal.
+- Ne demande JAMAIS "de quel produit tu parles ?" si la réponse est dans
+  le journal récent.
+
+### Simulations / exemples
+
+Si Louis dit "imagine que", "admettons", "pour un produit X", "si je
+vendais Y" → tu joues le jeu de la simulation. Tu produis comme si
+c'était son vrai business. Ne lui demande PAS son vrai business, ne
+cherche PAS dans STATE.md.
+
+## Mémoire (fichiers à consulter au besoin)
 
 - `STATE.md` — comptes connectés, configs actives (tu mets à jour quand on
   branche un nouveau truc)
