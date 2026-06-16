@@ -30,7 +30,7 @@ const page = await context.newPage();
 
 async function loadClassroom() {
   await page.goto(CLASSROOM_URL, { waitUntil: "domcontentloaded", timeout: 30000 });
-  await page.waitForTimeout(8000);
+  await page.waitForTimeout(7000);
   for (let i = 0; i < 6; i++) {
     await page.mouse.wheel(0, 600);
     await page.waitForTimeout(500);
@@ -47,7 +47,8 @@ async function findCardCoords(name) {
     let minDepth = Infinity;
     for (const el of all) {
       const text = (el.textContent || "").trim().toLowerCase();
-      if (text !== needle) continue; // exact match for the title
+      // Partial match: target appears at start (handles "META MEDIA BUYING & SURFSCALING")
+      if (!text.startsWith(needle)) continue;
       const depth = el.querySelectorAll("*").length;
       if (depth < minDepth) {
         minDepth = depth;
@@ -56,7 +57,7 @@ async function findCardCoords(name) {
     }
     if (!best) return null;
 
-    // Walk up to find a card-sized clickable container
+    // Walk up to find a card-sized container
     let node = best;
     let card = best;
     while (node && node !== document.body) {
@@ -76,41 +77,46 @@ async function findCardCoords(name) {
     }
 
     card.scrollIntoView({ block: "center", behavior: "instant" });
-    const rect = card.getBoundingClientRect();
-    return {
-      x: rect.x + rect.width / 2,
-      y: rect.y + rect.height / 2,
-      width: rect.width,
-      height: rect.height,
-      tag: card.tagName,
-      cls: (card.className || "").toString().slice(0, 80),
-    };
+    const r = card.getBoundingClientRect();
+    return { x: r.x + r.width / 2, y: r.y + r.height / 2, tag: card.tagName };
   }, name);
 }
 
-async function extractLessons() {
-  // After landing on a module page, scroll and grab all lesson links
-  for (let i = 0; i < 6; i++) {
-    await page.mouse.wheel(0, 500);
-    await page.waitForTimeout(500);
-  }
-  await page.evaluate(() => window.scrollTo(0, 0));
-  await page.waitForTimeout(1000);
-
+async function extractAllClickables() {
+  // Comprehensive: find ALL elements that look interactive, with text and coordinates
   return page.evaluate(() => {
     const items = [];
-    for (const a of document.querySelectorAll("a[href]")) {
-      const href = a.href;
-      const text = (a.textContent || "").trim();
-      if (
-        /skool\.com\/[^/]+\/classroom\/[^/]+\/[^/?#]+/.test(href) &&
-        text &&
-        !href.endsWith("/classroom")
-      ) {
-        items.push({ title: text.slice(0, 200), href });
-      }
+    const seen = new Set();
+    for (const el of document.querySelectorAll("*")) {
+      const text = (el.textContent || "").trim();
+      if (text.length < 3 || text.length > 250) continue;
+      const rect = el.getBoundingClientRect();
+      if (rect.width < 80 || rect.height < 18) continue;
+      if (rect.y < 0 || rect.y > 3000) continue;
+      const style = getComputedStyle(el);
+      const interactive =
+        el.tagName === "A" ||
+        el.tagName === "BUTTON" ||
+        el.getAttribute("role") === "button" ||
+        el.getAttribute("role") === "link" ||
+        style.cursor === "pointer";
+      if (!interactive) continue;
+      // Skip very nested items (probably children of a card)
+      if (el.querySelectorAll("*").length > 30) continue;
+      const key = `${text.slice(0, 60)}|${Math.round(rect.x)}|${Math.round(rect.y)}`;
+      if (seen.has(key)) continue;
+      seen.add(key);
+      items.push({
+        text: text.slice(0, 200),
+        x: rect.x + rect.width / 2,
+        y: rect.y + rect.height / 2,
+        w: Math.round(rect.width),
+        h: Math.round(rect.height),
+        tag: el.tagName,
+        href: el.href || null,
+      });
     }
-    return Array.from(new Map(items.map((i) => [i.href, i])).values());
+    return items;
   });
 }
 
@@ -119,48 +125,72 @@ const results = [];
 for (const moduleName of TARGET_MODULES) {
   console.log(`\n=== Module: ${moduleName} ===`);
   await loadClassroom();
-  await page.waitForTimeout(500);
 
   const coords = await findCardCoords(moduleName);
   if (!coords) {
-    console.error("  Pas trouve");
-    results.push({ module: moduleName, error: "not_found" });
+    console.error("  Pas trouve sur classroom");
+    results.push({ module: moduleName, error: "module_not_found" });
     continue;
   }
-  console.log(
-    `  Card <${coords.tag}> ${Math.round(coords.width)}x${Math.round(coords.height)} @ (${Math.round(coords.x)}, ${Math.round(coords.y)})`
-  );
+  console.log(`  Card <${coords.tag}> @ (${Math.round(coords.x)}, ${Math.round(coords.y)})`);
 
-  // Real mouse click at the card center
   const urlBefore = page.url();
   await page.mouse.move(coords.x, coords.y);
   await page.waitForTimeout(300);
   await page.mouse.click(coords.x, coords.y);
 
-  // Wait for URL to change
   for (let i = 0; i < 20; i++) {
     if (page.url() !== urlBefore) break;
     await page.waitForTimeout(500);
   }
-  await page.waitForTimeout(3000);
+  await page.waitForTimeout(4000);
 
   const moduleUrl = page.url();
   if (moduleUrl === urlBefore) {
-    console.error("  Click sans effet (URL inchangee)");
+    console.error("  Click sans effet");
     results.push({ module: moduleName, error: "click_no_effect" });
     continue;
   }
   console.log(`  Module ouvert: ${moduleUrl}`);
 
-  const slug = moduleName.toLowerCase().replace(/\s+/g, "-");
+  // Wait for lesson list to render, scroll module page
+  await page.waitForTimeout(3000);
+  for (let i = 0; i < 8; i++) {
+    await page.mouse.wheel(0, 400);
+    await page.waitForTimeout(400);
+  }
+  await page.evaluate(() => window.scrollTo(0, 0));
+  await page.waitForTimeout(1500);
+
+  const slug = moduleName.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/-+$/, "");
   await page.screenshot({
     path: path.join(OUT_DIR, `module-${slug}.png`),
     fullPage: true,
   });
 
-  const lessons = await extractLessons();
-  console.log(`  Lecons trouvees: ${lessons.length}`);
-  results.push({ module: moduleName, url: moduleUrl, lessons });
+  // Dump full HTML for debug
+  const html = await page.content();
+  await writeFile(path.join(OUT_DIR, `module-${slug}.html`), html);
+
+  // Get all interactive elements on the module page
+  const clickables = await extractAllClickables();
+  await writeFile(
+    path.join(OUT_DIR, `module-${slug}-clickables.json`),
+    JSON.stringify(clickables, null, 2)
+  );
+  console.log(`  Elements interactifs trouves: ${clickables.length}`);
+
+  // Filter to find likely lessons: small height, in the body
+  const lessonCandidates = clickables.filter(
+    (c) => c.h < 80 && c.w > 200 && c.text.length > 8 && c.text.length < 150
+  );
+  console.log(`  Candidats lecons (h<80 w>200): ${lessonCandidates.length}`);
+
+  results.push({
+    module: moduleName,
+    url: moduleUrl,
+    lessonCandidates: lessonCandidates.slice(0, 50),
+  });
 }
 
 await writeFile(
@@ -170,12 +200,10 @@ await writeFile(
 
 console.log("\n=== RECAP ===");
 for (const r of results) {
-  if (r.error) {
-    console.log(`${r.module}: ERREUR (${r.error})`);
-  } else {
-    console.log(`${r.module}: ${r.lessons.length} lecons`);
-  }
+  if (r.error) console.log(`${r.module}: ERREUR (${r.error})`);
+  else console.log(`${r.module}: ${r.lessonCandidates?.length || 0} candidats lecons`);
 }
-console.log(`\nResultat sauve: ${OUT_DIR}/selected-modules.json`);
+console.log(`\nResultat: ${OUT_DIR}/selected-modules.json`);
+console.log(`Debug HTML + clickables JSON dans ${OUT_DIR}/`);
 
 await browser.close();
