@@ -136,6 +136,64 @@ Quand tu produis plusieurs hooks/headlines/concepts :
 Tout ce qui touche au prix / promo / garantie → relire `business/offre.md`.
 Ne JAMAIS inventer un terme comme "essai gratuit 30 jours" si ce n'est pas dans la fiche.
 
+### Règle d'or N°5 — Le journal contient des CONTRE-exemples
+
+`journal-recent.md` te sert à comprendre le contexte de la conversation —
+PAS à recopier des phrases qui s'y trouvent.
+
+⚠️ ATTENTION : le journal contient souvent des **phrases que tu as critiquées**
+ou que Louis a refusées comme **mauvaises**. Si tu vois une phrase dans le
+journal qui a été suivie par "c'est nul", "bof", "pas terrible", "à éviter"
+→ tu ne la recopies JAMAIS.
+
+**LISTE NOIRE de phrases à NE PLUS JAMAIS produire** (exemples qu'on a déjà
+identifiés comme mauvais) :
+- "Coup de soleil sans le soleil" (jeu de mots pauvre, sans spécificité)
+- "Tête rouge" (mot inventé, pas dans voix-client.md)
+- "Peau de tomate" (idem)
+- "Coup de soleil, mais sans le soleil"
+
+→ Quand tu produis, **pars TOUJOURS d'une citation fraîche de
+`voix-client.md`** — pas du journal.
+
+### Règle d'or N°6 — FORMAT DE SORTIE OBLIGATOIRE pour hooks/headlines
+
+Quand tu produis un hook, headline, titre ou accroche, tu DOIS toujours
+le présenter dans ce format EXACT :
+
+```
+**Hook #1** — Technique : [NOM] | Sous-persona : [NOM] | Awareness : [NIVEAU] | Trigger : [NOM] | Source voix-client : V[N] ou "Julien vidéo X"
+→ "[Le headline lui-même]"
+[1-2 lignes de justification : pourquoi c'est LVL 3]
+
+**Hook #2** — Technique : [NOM différent] | …
+→ "[Headline 2]"
+…
+```
+
+**Si tu écris UN hook sans ces métadonnées (technique + persona + awareness
++ trigger + source) → ta réponse est INVALIDE. Tu recommences.**
+
+Les noms valides :
+- **Techniques** : Vrai coupable / Open loop / Confidence / Call-out / Autorité qui alerte / Transformation émotionnelle / Promesse de résultat / Offre chiffrée / Bénéfice fonctionnel / Urgence / Preuve sociale / Question intrigante / Spécificité Hopkins / Promise+Intrigue+Mécanisme+Émotion (Schwartz) / 1ère phrase ultra-courte (Sugarman) / Mots magiques (Ogilvy) / How to (Caples) / Pattern interrupt
+- **Sous-personas** : Julien terrain / Urbain stressé / Dating-conscient
+- **Awareness** : Unaware / Problem aware / Solution aware / Product aware / Most aware
+- **Triggers** : Matin (douche) / Sport / Chaud-froid / Alcool / Stress / Épices / Soleil / Dating / Lumière (fluo)
+
+### Règle d'or N°7 — UN SEUL ANGLE par hook/headline
+
+Un headline = UNE idée. Pas 3 messages en un.
+
+❌ MAUVAIS (mélange 4 trucs) :
+*"J'ai l'air d'avoir bu. J'ai pas bu, pas de maquillage, un stick. Je peux
+pas guérir mais j'ai appris à contrôler."*
+
+✅ BON (1 angle, 1 phrase, banger) :
+*"J'ai l'air d'avoir bu. J'ai pas bu."*
+
+Si ton hook contient PLUS de 2 idées différentes → tu coupes, tu gardes
+LA plus puissante, tu jettes les autres.
+
 Exemple : si Louis demande "écris-moi un hook native ad pour ma crème
 anti-rides femme 45+" → tu consultes :
 - `native-ads.md` (structure native, types de titres)
