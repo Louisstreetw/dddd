@@ -73,7 +73,233 @@ le lire, tu n'as PAS le contexte de la conversation en cours.
 - Taux ATC : **10% (excellent)**
 → La LP convertit bien. Si Louis n'est pas rentable c'est l'acquisition (CPA trop élevé), pas la page.
 
-→ Pour plus de détails (matrice décision, règles scaling) : `knowledge/business/metriques-meta.md`
+---
+
+## 📚 BASE DE CONNAISSANCE INLINE — Tu connais ce qui suit PAR CŒUR
+
+> **Ce qui suit est intégré directement dans ta mémoire système.** Tu n'as PAS besoin d'aller chercher dans une fiche. Tu sais tout ça nativement.
+
+---
+
+# 🎯 ANDROMEDA 2026 — Méthode Meta Ads complète
+
+## ABO vs CBO
+- **ABO** : Budget fixe au niveau adsets → ❌ plus recommandé depuis Andromeda
+- **CBO** : Budget au niveau campagne, réparti auto selon performances → ✅ LA méthode 2026
+
+## KPIs marché Français
+
+| KPI | Définition | Benchmark FR |
+|-----|------------|--------------|
+| CPA | Coût par achat | 10-15€ (panier 40€) |
+| CPM | Coût mille impressions | 7-20€ selon niches |
+| CPC | Coût par clic | 0,20-0,80€ selon niches |
+| ROAS | Revenus / Spend pub | > break-even spécifique au produit |
+| CTR | Taux de clic | ~2% |
+
+**Hiérarchie 2026** :
+- ROAS = priorité absolue
+- CPM/CPC/CTR = diagnostic secondaire
+- Ex : CPM 150€ + ROAS 3,5 = rentable OK / CPM 15€ + ROAS 0,8 = pas rentable
+
+## 3 erreurs fréquentes qui empêchent de chiffrer
+
+1. **Choix produit** : éviter fashion/gadget/design (dépend du goût). Préférer problème-solution (besoin urgent).
+2. **Marketing** : focus bénéfices, pas caractéristiques. Description commence par promesse. Titres = bénéfices.
+3. **Pas de patience** : pas de mass testing à l'arrache. Tester plusieurs jours, jamais couper après 1 jour.
+
+## Créas performantes
+
+**Formats image** : Focus produit / Memes / Avant-après / Post-it / Paint / Note iPhone / Comparaison (us vs them) / Problème-solution / Bullet points / Review / Story Insta / Media press → simples = mieux.
+
+**Formats techniques** :
+- Feed : 4:5 (1080 × 1350)
+- Story : 9:16 (1920 × 1080), 250px safe haut/bas
+
+**Ad copy** : long, structure AIDA, pas trop agressif sur promesses.
+
+## Méthode testing CBO
+
+**Setup CBO France 50-100€/j** :
+- 1 adset = 1 créa/concept/angle
+- Toutes variations d'un concept dans le MÊME adset
+- Jamais 2× la même créa
+- 1 campagne par produit/collection/event
+
+**Nb créas max = Budget / 3** :
+- 50€/j → 15-20 créas
+- 100€/j → 30-35 créas
+- 300€/j → 75-100 créas
+
+(1 créa = ~3€ minimum pour être testée)
+
+**Composition** :
+- Mix images + vidéos
+- Diversité d'angles + types (UGC, natif, focus produit)
+- Pas 20 UGC même angle avec hooks différents
+- Score similarité : créas trop similaires = Meta ignore
+- Itération = changer 50%+ pas juste le hook
+
+## Lecture des résultats
+
+**Règles** :
+- Rentabilité = métrique N°1
+- Spend minimum AVANT analyse : 100-150€
+- Après 2-3 jours minimum
+- Décisions sur tranches de 3-7 jours min
+
+**Diagnostics** :
+- Pas rentable → Coût ATC + paiement initié + CPC + CPM en amont
+- CTR élevé mais pas rentable → croiser CTR × CPM
+
+## 🔥 LES CRÉAS À ROAS BAS — Logique d'écosystème (CRUCIAL)
+
+**Cas 1 : Créa principale (= prend tout le spend) pas rentable**
+→ Couper ou itérer (les autres seront pires)
+
+**Cas 2 : Créa secondaire à ROAS bas MAIS autres rentables**
+→ **GARDER** : effet écosystème, fait awareness, finit la vente des autres, Meta gère
+
+**Exception (très rare)** : ROAS < 1 sur 7-14j+ → couper même secondaire car plombe la CBO
+
+**Règles globales** :
+- **Si CBO globalement rentable** → garde TOUTES les créas même celles à ROAS 1,5
+- **Nouvelle créa qui prend tout le spend dès le début avec ROAS faible** → laisser 3-5j (Meta a peut-être détecté une opportunité)
+
+> ⚠️ **N'utilise JAMAIS le raccourci "coupe les non-rentables".** Réfléchis en écosystème.
+
+## Scaling vertical CBO
+
+- **Comment** : augmenter direct le budget de la campagne (pas adset par adset)
+- **Quand** : à minuit pour le lendemain. PAS en milieu de bonne journée.
+- **Fréquence** : tous les jours si scale vite / tous les 2-3j pour safe
+
+**Si ROAS baisse après scaling** :
+| Situation | Action |
+|-----------|--------|
+| Baisse mais toujours rentable | Normal → continuer, observer 48h |
+| Baisse, proche break-even | Ne rien faire 2-3j + ajouter 5-10 créas |
+| Baisse, pas rentable | Arrêter scaling 2-3j (+ unscale si grosse baisse) + ajouter 5-10 créas |
+
+## Matrice prise de décision
+
+**Lancement CBO → laisser tourner 2-3j → vérifier ROAS global vs break-even**
+
+- **Légèrement rentable** : laisser tourner sans scaler, vérifier marketing trust, tester offres + intéressantes
+- **Bien rentable** : scaler budget CBO, ajouter nouvelles créas, réduire budget si stats baissent
+- **Pas rentable** :
+  - Stats trop chères → laisser tourner low budget, revoir pubs + nouvelles créas
+  - AOV trop bas → améliorer offre, augmenter valeur perçue
+  - Taux conv/ATC trop bas → simplifier page, vérifier marketing, tester offre drastiquement différente (BOGO)
+
+## 📚 PLAYBOOKS
+
+### 🛒 PLAYBOOK 1 — CPA élevé / ATC faible (<5%)
+
+**Symptôme** : Trafic arrive mais ne convertit pas.
+**Diagnostic** : ATC très faible = rarement problème ads, souvent côté SITE.
+
+**Causes** :
+1. **Incohérence créas × page produit** (couleurs, prix, bénéfices qui matchent pas)
+2. **Offre pas intéressante** (prix élevé, pas de promo/bundle, shipping caché)
+3. **Marketing faible** (copy sans bénéfices clairs, trop complexe)
+4. **Manque de trust** (pas d'avis, site cheap)
+5. **Page produit pas convaincante** (description courte, pas de démo, layout confus)
+
+**Solutions** : améliorer cohérence créas/page, offre + attractive (urgence), copy/marketing page, avis + trust badges, parcours d'achat simplifié.
+
+### 📉 PLAYBOOK 2 — CPA explose / ROAS s'effondre
+
+**Symptôme** : CPA monte progressivement (20→30€), ROAS s'effondre (3→1,8), dépenses montent, conversions baissent.
+
+**Causes** :
+1. **Creative fatigue** : mêmes créas depuis semaines, frequency monte, audience saturée
+2. **Poche d'audience limitée** : audience qualifiée a une taille limite. Plus on scale → gens + froids → plus dur à convertir
+3. **Mauvaise période** : post-Q4, hors saison
+4. **Concurrence augmente** : promos agressives, marché saturé
+
+**Solutions par cause** :
+- Creative fatigue → ajouter nouvelles créas (nouveaux angles)
+- Poche limitée → améliorer site/marketing OU offre + attractive ou - chère (le + impactant : baisser prix élargit massivement la poche)
+- Mauvaise période → baisser budget, patienter 2-3 mois
+- Concurrence → baisser budget, maintenir présence, attendre
+
+**Focus** : élargir la poche d'audience (+ de créas, site/marketing meilleur, offre + attractive).
+
+### 💸 PLAYBOOK 3 — CPM extrêmement cher (> 50€ FR)
+
+**Exception** : panier > 100€ → CPM élevé normal.
+
+**Causes** :
+1. **Incohérence créa/persona/produit** → Meta galère, enchères élevées
+2. **Mauvaise offre/marketing** → Meta trouve pas audience qualifiée
+3. **Produit très cher** (>100€) → CPM élevé normal
+4. **Période saturée** → accepter ou baisser budget
+
+> **Un CPM élevé n'est PAS problématique si le ROAS est bon.**
+
+---
+
+# 🧠 NIVEAUX DE CONSCIENCE (Schwartz appliqué Meta Ads)
+
+## Les 5 niveaux
+
+| # | Niveau | Le prospect... | Funnel |
+|---|--------|----------------|--------|
+| 1 | **Unaware** | Ignore qu'il a un problème | TOFU |
+| 2 | **Problem Aware** | Sait qu'il a un problème | TOFU/MOFU |
+| 3 | **Solution Aware** | Connaît les types de solutions | MOFU |
+| 4 | **Product Aware** | Connaît ton produit (compare) | MOFU/BOFU |
+| 5 | **Most Aware** | Connaît ton offre, prêt à acheter | BOFU |
+
+## 💡 PÉPITE — Scale les Unaware
+
+> **Les créas que tu scale doivent VRAIMENT cibler les unaware. Elles ont 20x plus d'impact que celles BOFU.**
+
+Pourquoi :
+- Génèrent des ventes ✅
+- Font ENTRER de nouvelles personnes dans le funnel
+- Pool MUCH plus large
+
+À l'inverse, créas BOFU (offre/promo) parlent à pool restreint et plafonnent vite.
+
+## Funnel performant
+
+L'achat n'est PAS linéaire : la majorité voit PLUSIEURS pubs avant d'acheter.
+Sans diversité → audiences "bloquées" dans le funnel.
+
+Multiplier formats (vidéo UGC, fondateur, réponses objections, statiques, comparaison) × scripts adaptés par awareness.
+
+## Longueur script selon awareness
+
+| Niveau | Longueur |
+|--------|----------|
+| Unaware | Long (VSL 5-15 min + LP éducative) |
+| Problem Aware | Moyen-long |
+| Solution Aware | Moyen |
+| Product Aware | Court-moyen (USP, comparaisons) |
+| Most Aware | Très court (offre + CTA) |
+
+## Blocs de script par niveau
+
+- **Unaware** : Call out symptômes + éduquer → Diagnostic problème + remuer pain → Solution → Social proof + objections → CTA
+- **Problem Aware** : Diagnostic problème + remuer pain → Solution → Social proof + objections → CTA
+- **Solution Aware** : Solution → Social proof + objections → CTA
+- **Product Aware** : USP / Différenciation → Preuve sociale → CTA (avec garantie/offre)
+- **Most Aware** : Offre + urgence + CTA direct
+
+## Balance TOFU/MOFU/BOFU pour scaler
+
+- **60-70% TOFU (Unaware/Problem)** → élargir la poche d'audience
+- **20-30% MOFU (Solution/Product)** → qualifier
+- **10-15% BOFU (Most Aware/offre)** → closing + écosystème
+
+## Erreurs à éviter
+
+- Faire fixette sur le concept (logique suffit)
+- Ne faire que créas BOFU/offre (plafonne vite)
+- Mêmes angles répétés (Meta voit que c'est pareil)
+- Promesse identique sur tous niveaux (chaque niveau a SON message)
 
 ---
 
