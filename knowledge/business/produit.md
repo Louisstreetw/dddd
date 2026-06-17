@@ -109,12 +109,87 @@ Quand la **barrière cutanée** est fragilisée :
 - Création d'une USP
 - Brief créatif (qu'est-ce qu'on dit du produit dans la pub ?)
 
-**Fiches business à croiser obligatoirement** :
-- `business/positionnement.md` (pour le ton et les mots à utiliser)
-- `business/offre.md` (pour les détails commerciaux)
+**Fiches business à croiser** :
 - `business/persona.md` (pour adapter le discours à la cible)
+- `business/voix-client.md` (pour piocher la voix authentique)
 
 **Fiches livres à croiser obligatoirement** :
 - `livres/scientific-advertising.md` (Hopkins — être spécifique, échantillons, raconter toute l'histoire)
 - `livres/breakthrough-advertising.md` (Schwartz — mécanisme dans le copy)
 - `livres/ogilvy.md` (Ogilvy — long copy pour produits "à expliquer")
+
+---
+
+## 🎯 VISION & POSITIONNEMENT
+
+**Vision long-terme** : construire **LA marque skincare honnête pour les hommes**.
+
+**Court-terme (6-12 mois)** : rendre ce stick rentable et scaler. Tout conseil doit servir UN des 3 objectifs :
+1. Augmenter les ventes du stick
+2. Améliorer la rentabilité (ROAS, AOV, LTV)
+3. Construire les fondations de la marque
+
+**Positionnement officiel** :
+> *"Le premier soin pour les hommes qui rougissent au quotidien — sans promesses bidons, sans solution miracle, sans rituel féminin transposé."*
+
+---
+
+## 🎭 ANTI-POSITIONNEMENT (à utiliser dans le copy)
+
+À utiliser comme leviers de différenciation :
+- ❌ **PAS** une crème pour "peau sensible" qui pique au bout de 3 jours
+- ❌ **PAS** une lotion de pharmacie à 20€ qui aggrave les rougeurs
+- ❌ **PAS** un traitement médical contre la rosacée
+- ❌ **PAS** une routine en 5 produits inspirée du skincare féminin
+- ❌ **PAS** un soin "tu seras guéri en 7 jours" (= mensonge)
+- ❌ **PAS** un produit "anti-âge / éclat / coup de jeune"
+
+---
+
+## 🗣 VOIX DE MARQUE (tone of voice)
+
+### Principes
+- **Honnête** : on dit qu'on ne guérit pas, qu'on aide à contrôler
+- **Direct** : pas de fluffy bullshit cosmétique
+- **Pragmatique** : un mec en parle à un autre mec
+- **Masculin sans macho** : pas de testostérone forcée
+- **Pédagogique** : on explique le mécanisme
+- **Empathique** : on a galéré pareil
+
+### Mots à utiliser ✅
+- **Contrôler** (pas "guérir")
+- **Apaiser** (pas "traiter")
+- **Rééquilibrer** (pas "soigner")
+- **Réduire / atténuer** (pas "éliminer")
+- **Barrière cutanée**, **balance lipidique**
+- **Déclencheurs**, **triggers**
+- **Stick**, **format pratique**
+- **Quotidien**, **simple**, **rapide**
+
+### Mots à BANNIR ❌
+- "Guérir", "guérison", "soigner" (= juridique + faux)
+- "Miracle", "magique", "révolutionnaire"
+- "Rosacée" (= pathologie, pas notre cible)
+- "Couperose" (idem)
+- "Anti-âge", "éclat", "coup de jeune"
+- "Pour peaux sensibles" (= trop générique)
+- "Cosmétique masculine premium" (= élitiste)
+- "Tête rouge" (= mot inventé, pas dans voix-client)
+
+---
+
+## 🎁 STRATÉGIE OFFRE (2 niveaux)
+
+### Offre principale — Stick 30 jours à 29,90€
+- 1 stick complet (~40g, ~30 jours)
+- Promesse : "Apaisez vos rougeurs en 30 jours"
+- Garantie 30 jours satisfait ou remboursé
+
+### Offre d'entrée — Stick découverte 15 jours à 17,90€
+- Format réduit, pour les hésitants
+
+### Pour le bot
+- ⚠️ **JAMAIS** inventer une promo qui n'existe pas (genre "essai gratuit", "1ère commande offerte")
+- L'offre principale (29,90€) est plus scalable car marge 26€ (vs 14€ à 17,90€)
+- Pousser majoritairement 29,90€ en Meta
+- Réserver 17,90€ pour retargeting / hésitants
