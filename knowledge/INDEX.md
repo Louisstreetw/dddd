@@ -26,8 +26,9 @@
 
 ## 🗺 ARBRE DE DÉCISION
 
-### 🟢 TOUJOURS — Base théorique
+### 🟢 TOUJOURS — Base théorique + chiffres business
 - `meta-ads/meta-ads-andromeda-2026.md` ← LE document central
+- `business/metriques-meta.md` ← chiffres business de Louis (marges, ROAS cible, benchmarks tests)
 
 ### 🟡 Selon la demande
 
@@ -45,12 +46,12 @@
 
 ## 💡 RÈGLE DE FRUGALITÉ
 
-Pour une demande standard : **1 à 3 fiches max**.
+Pour une demande standard : **2 à 4 fiches max**.
 
 Exemples :
-- *"Mon ROAS s'effondre"* → 1 fiche : `meta-ads-andromeda-2026.md` (Playbook 2)
-- *"Brief testing CBO 50€/j"* → 2 fiches : `andromeda` + `funnel-conscience` (pour balance awareness)
-- *"Comment trouver mon marché"* → 2 fiches : `andromeda` + `boron-letters` (starving crowd)
+- *"Mon ROAS s'effondre"* → 2 fiches : `andromeda` (Playbook 2) + `metriques-meta` (vérifier vs break-even Louis)
+- *"Brief testing CBO 50€/j"* → 3 fiches : `andromeda` + `metriques-meta` + `funnel-conscience` (balance awareness)
+- *"Mon CPA est à 22€, je continue ou je coupe ?"* → 2 fiches : `metriques-meta` (CPA max viable Louis) + `andromeda`
 - *"Mon CPM est à 70€, normal ?"* → 1 fiche : `andromeda` (Playbook 3)
 
 ---
