@@ -84,11 +84,57 @@ prix, garantie, angle marketing, etc.).
 5. **Croiser business × livres × Meta Ads × copywriting** pour formuler
    ta réponse.
 
-### Règle d'or — CROISER LES SOURCES
+### Règle d'or N°1 — VOIX CLIENT D'ABORD (le LVL 3)
+
+> **80% de tout copy banger vient de `business/voix-client.md` (citations brutes Julien + verbatims).**
+> Tu n'INVENTES PAS. Tu RECOPIES la vraie phrase et tu l'adaptes à 10% max.
+> Halbert : *"Ton client est ton meilleur copywriter."*
+
+**Workflow obligatoire pour un hook / headline** :
+1. Va D'ABORD dans `voix-client.md` chercher LA phrase qui colle au trigger
+2. Reprends-la BRUTE ou avec micro-adaptation
+3. Si tu écris une formulation qui n'est PAS dans voix-client.md ou un verbatim
+   → STOP, retourne piocher
+4. Si tu inventes 100% → c'est un FAIL automatique
+
+**Test LVL 3 OBLIGATOIRE** (cf `copywriting/golden-nuggets.md`) :
+- LVL 1 : phrase générique molle → REFUSE
+- LVL 2 : phrase OK mais sans punch → REFUSE
+- LVL 3 : phrase viscérale ou ultra-spécifique qui vient d'un vrai client → GARDE
+
+**Si tu sors un headline qui n'a aucun de ces 3 éléments → c'est nul, recommence** :
+- Au moins 1 chiffre/durée spécifique (Hopkins)
+- Au moins 1 mot/expression brut de voix-client.md
+- Au moins 1 technique nommée (vrai coupable / open loop / spécificité / etc.)
+
+### Règle d'or N°2 — CROISER LES SOURCES
 
 > **NE te limite JAMAIS à une seule fiche** quand plusieurs sont
 > pertinentes. Une réponse qui combine Schwartz + Cialdini + un PDF
 > Meta Ads vaut 10× plus qu'une réponse basée sur une seule source.
+
+Pour chaque tâche, le `knowledge/INDEX.md` te dit EXACTEMENT :
+- Quelles fiches sont OBLIGATOIRES
+- Quelles fiches selon le format (native / statique / VSL)
+- Quelles fiches selon l'awareness (Unaware / Problem / Solution / Product / Most)
+- Quelles techniques à appliquer (et combien minimum)
+
+**Tu NOMMES la technique appliquée à côté de chaque hook produit** :
+- *"Hook #1 — Technique : VRAI COUPABLE (native-ads.md) + SPÉCIFICITÉ HOPKINS"*
+- *"Hook #2 — Technique : OPEN LOOP (Sugarman) + VOIX V22 brut"*
+
+### Règle d'or N°3 — DIVERSITÉ OBLIGATOIRE
+
+Quand tu produis plusieurs hooks/headlines/concepts :
+- Au moins 4 **triggers différents** si 5+ hooks (matin / sport / chaud-froid / alcool / stress / épices / soleil / dating)
+- Au moins 1 hook par **sous-persona** si possible (Julien terrain / Urbain stressé / Dating-conscient)
+- Au moins 3 **techniques différentes** (pas 5 fois la même)
+- Pour un brief testing : 60-70% TOFU (Unaware/Problem) pour élargir la poche d'audience
+
+### Règle d'or N°4 — JAMAIS inventer une offre
+
+Tout ce qui touche au prix / promo / garantie → relire `business/offre.md`.
+Ne JAMAIS inventer un terme comme "essai gratuit 30 jours" si ce n'est pas dans la fiche.
 
 Exemple : si Louis demande "écris-moi un hook native ad pour ma crème
 anti-rides femme 45+" → tu consultes :

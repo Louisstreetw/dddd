@@ -4,6 +4,144 @@
 
 ---
 
+## 🔥 RÈGLE D'OR — VOIX CLIENT D'ABORD
+
+> **80% de tout copy banger vient de `business/voix-client.md` (citations brutes Julien + verbatims).**
+> **Tu n'INVENTES pas. Tu RECOPIES la vraie phrase et tu l'adaptes au max 10%.**
+> Halbert : *"Ton client est ton meilleur copywriter."*
+
+Quand tu écris un hook/headline :
+1. Va d'abord dans `voix-client.md` chercher une phrase brute qui colle
+2. Si tu écris une formulation qui n'est PAS dans `voix-client.md` ou un verbatim → STOP, retourne piocher
+3. Si tu inventes 100%, c'est un signal de FAIL — recommence
+
+---
+
+## 🎯 MAPPING ULTRA PRÉCIS PAR TÂCHE
+
+> **Pour chaque tâche, le bot a une liste de fiches OBLIGATOIRES à lire et de techniques à appliquer.**
+
+### TÂCHE — Écrire des HEADLINES / TITRES Meta (sous la créa)
+
+**OBLIGATOIRES (lire toutes)** :
+- `business/voix-client.md` → matière première (80% du contenu)
+- `business/persona.md` → triggers + sous-personas + douleurs
+- `business/positionnement.md` → mots autorisés/bannis
+- `copywriting/golden-nuggets.md` → test LVL 1/2/3 + simplicité
+
+**SELON LE FORMAT** :
+- Statique Meta → `meta-ads/structure-ad-copy.md` (6 types titres winners)
+- Native ad → `meta-ads/native-ads.md` (7 types titres natives)
+
+**TECHNIQUES À APPLIQUER (au minimum 2 par headline)** :
+- `livres/scientific-advertising.md` → **Spécificité Hopkins** (chiffres, durées : "3 ans", "1 bière", "90%")
+- `livres/breakthrough-advertising.md` → **Promise + Intrigue + Mécanisme + Émotion** (Schwartz)
+- `livres/adweek-copywriting.md` → **1ère phrase ULTRA courte** (Sugarman 3-5 mots)
+- `livres/ogilvy.md` → **Mots magiques** (how to, new, suddenly, why)
+- `livres/great-leads.md` → 6 types de leads selon awareness
+
+**RÈGLES STRICTES** :
+- Chaque headline NOMMÉ par technique appliquée
+- Au moins 2 techniques différentes par headline (genre Hopkins + Schwartz)
+- 80%+ du headline vient d'une phrase voix-client
+- Test LVL 3 OBLIGATOIRE → refuse si <LVL 3
+
+---
+
+### TÂCHE — Écrire un HOOK (1ère ligne d'ad copy / accroche)
+
+**OBLIGATOIRES** :
+- `business/voix-client.md` → la phrase brute
+- `business/persona.md` → contexte (sous-persona + trigger + awareness)
+- `business/positionnement.md` → mots
+- `copywriting/golden-nuggets.md` → validation
+
+**SELON LE FORMAT** :
+- Native ad → `meta-ads/native-ads.md` (style oral "je", "alors voilà")
+- Statique Meta → `meta-ads/structure-ad-copy.md` (8 types de hooks)
+- VSL → `copywriting/funnel-et-niveau-de-conscience.md` (blocs script par niveau)
+
+**TECHNIQUES** :
+- `livres/adweek-copywriting.md` → 1ère phrase ULTRA courte + 31 triggers psychologiques + slippery slide
+- `livres/scientific-advertising.md` → Spécificité + Tell your full story
+- `livres/breakthrough-advertising.md` → Identification + Intensification (13 façons)
+- `livres/influence.md` → 7 triggers Cialdini
+
+---
+
+### TÂCHE — Rédiger une NATIVE AD complète
+
+**OBLIGATOIRES** :
+- Les 4 fiches business standards (voix-client, persona, positionnement, golden-nuggets)
+- `business/produit.md` → mécanisme à dramatiser
+- `meta-ads/native-ads.md` → 5 concepts visuels + 7 titres + 4 structures copy + 9 étapes du squelette
+- `copywriting/funnel-et-niveau-de-conscience.md` → adapter selon awareness
+
+**TECHNIQUES** :
+- `livres/breakthrough-advertising.md` → 7 techniques breakthrough (intensification, gradualization, etc.)
+- `livres/boron-letters.md` → pile A vs pile B (ressembler à message perso)
+- `livres/scientific-advertising.md` → Tell your full story, spécificité
+- `livres/influence.md` → triggers psy à activer
+
+**RÈGLES** :
+- Squelette 9 blocs (cf native-ads.md)
+- Hook en "je", style oral
+- Désarmer le scepticisme AVANT qu'il vienne
+- Proxy validation (l'entourage qui remarque)
+- Spécificité chiffrée
+- Émotion d'abord, logique ensuite
+- Closing soft, marque qu'à la fin
+
+---
+
+### TÂCHE — Brief de TESTING (CBO Meta Ads)
+
+**OBLIGATOIRES** :
+- Les 4 fiches business
+- `business/produit.md` + `business/offre.md` (marges, KPIs)
+- `meta-ads/meta-ads-andromeda-2026.md` → setup CBO + KPIs + scaling + playbooks
+- `copywriting/funnel-et-niveau-de-conscience.md` → balance TOFU/BOFU + rôle Unaware
+
+**RÈGLES** :
+- Calculer max créas : Budget / 3
+- Balance winners (40%) vs nouveaux concepts (60%)
+- Balance awareness : 60-70% TOFU/Unaware/Problem (pour SCALER) + 20-30% MOFU + 10-15% BOFU
+- AU MINIMUM 1 concept par sous-persona (Julien terrain / Urbain stressé / Dating-conscient)
+- Varier 4-6 triggers différents minimum
+- Diversifier les formats (statique + native + UGC)
+- Pour chaque concept → produire 2-3 titres bangers (cf TÂCHE Headlines)
+- Préciser KPIs cibles (marge à 26€ → CPA max 18€ pour ROAS 1,5)
+- Anticiper les playbooks (CPA, ROAS, CPM)
+
+---
+
+### TÂCHE — STATIQUE avec ad copy
+
+**OBLIGATOIRES** :
+- 4 fiches business
+- `business/produit.md`
+- `copywriting/golden-nuggets.md` → règles statiques + simplicity scale + hiérarchie visuelle
+- `meta-ads/structure-ad-copy.md` → 6 types titres + 8 hooks ad copy + Hook→Bénéfices→Preuves→Offre→CTA
+
+**RÈGLES** :
+- Format choisi parmi 4 (comparaison / headline+callouts / offer-based / UGC)
+- 1 SEUL angle dominant (promesse OU offre OU émotion OU curiosité OU preuve sociale OU urgence)
+- Test des 500ms (Quoi ? En quoi ça m'aide ?)
+- Wording 80% voix-client
+- Congruence titre × image
+- Offre EN FIN, pas au début
+
+---
+
+### TÂCHE — Analyse / Troubleshooting Meta Ads
+
+**OBLIGATOIRES** :
+- `meta-ads/meta-ads-andromeda-2026.md` → 3 playbooks (CPA élevé, ROAS chute, CPM cher) + matrice décision
+- `business/offre.md` → marges, KPIs cibles
+- `business/persona.md` → vérifier cohérence créa × persona
+
+---
+
 ## 🔥 PRIORITÉ ABSOLUE — BUSINESS DE LOUIS
 
 > **Pour TOUTE question liée au stick / à la marque / à la cible / au copy** : ces 5 fiches DOIVENT être lues EN PREMIER, avant toute fiche livre.
