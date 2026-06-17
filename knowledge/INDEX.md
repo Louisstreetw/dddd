@@ -4,49 +4,34 @@
 
 ---
 
-## ⚠️ MODE ACTUEL — Consultant pur (sans données client)
+## ⚠️ MODE ACTUEL — Test PDFs uniquement (livres désactivés)
 
-> Cette knowledge contient **uniquement les frameworks théoriques** (livres + PDFs de cours).
-> Tu n'as PAS de fiches sur le produit/persona/voix-client de Louis.
-> Quand Louis pose une question liée à SON business, **demande-lui les infos nécessaires** au lieu de supposer.
+> Cette knowledge contient **uniquement les PDFs de cours** (Meta Ads + copywriting transversal).
+> Les fiches livres (Hopkins, Schwartz, Ogilvy, etc.) sont **désactivées** dans `_disabled/`.
+> ⛔ NE PAS lire les fiches du dossier `_disabled/`.
+> Pas de fiches business non plus → demande les infos à Louis si besoin.
 
 ---
 
 ## 🗺 ARBRE DE DÉCISION — Quelle fiche pour quelle demande ?
 
-### 🟡 Selon le TYPE DE COPY demandé (UNE seule de ces fiches en base)
+### 🟡 Selon le TYPE DE COPY demandé (UNE seule)
 
-| Si la demande parle de... | Fiche de référence | IGNORER ces fiches |
-|---------------------------|---------------------|--------------------|
+| Si la demande parle de... | Fiche de référence | IGNORER |
+|---------------------------|---------------------|---------|
 | **Native ad** / **natif** / **storytelling** | `meta-ads/native-ads.md` | structure-ad-copy, andromeda |
 | **Hook** / **titre** / **headline** (statique Meta) | `meta-ads/structure-ad-copy.md` | native-ads, andromeda |
 | **Statique** / **carrousel** / **image fixe** | `meta-ads/structure-ad-copy.md` | native-ads, andromeda |
 | **VSL** / **vidéo longue** / **script vidéo** | `copywriting/funnel-et-niveau-de-conscience.md` | structure-ad-copy, native-ads, andromeda |
-| **Mail** / **email** / **newsletter** / **sales letter** | `livres/boron-letters.md` (Halbert) | structure-ad-copy, native-ads |
-| **Page produit** / **landing page** | `livres/ogilvy.md` + `livres/scientific-advertising.md` | andromeda |
 
 ### 🔵 Si la demande est STRATÉGIQUE / CAMPAGNE (UNE seule)
 
 | Si la demande parle de... | Fiche de référence |
 |---------------------------|---------------------|
 | **Testing** / **CBO** / **lancement** / **scaling** / **budget** / **ROAS** / **CPA** / **CPM** / **CTR** / **résultats** / **pas rentable** | `meta-ads/meta-ads-andromeda-2026.md` |
-| **Awareness** / **niveau de conscience** / **funnel** | `copywriting/funnel-et-niveau-de-conscience.md` + `livres/breakthrough-advertising.md` |
-| **Positionnement** marque / différenciation | `livres/positioning.md` |
+| **Awareness** / **niveau de conscience** / **funnel** | `copywriting/funnel-et-niveau-de-conscience.md` |
 
-### ⚪ Selon la TECHNIQUE COPYWRITING à activer (UNE ou DEUX max)
-
-| Si tu veux activer... | Fiche de référence |
-|------------------------|---------------------|
-| **Spécificité chiffrée** (chiffres, durées) | `livres/scientific-advertising.md` (Hopkins) |
-| **1ère phrase ULTRA courte** / slippery slide / 31 triggers psy | `livres/adweek-copywriting.md` (Sugarman) |
-| **Promise + Intrigue + Mécanisme + Émotion** | `livres/breakthrough-advertising.md` (Schwartz) |
-| **Mots magiques** (how to, new, suddenly) | `livres/ogilvy.md` |
-| **Triggers Cialdini** (rareté, autorité, preuve sociale) | `livres/influence.md` |
-| **Voix client / starving crowd** (philosophie) | `livres/boron-letters.md` |
-| **Type de lead** selon awareness | `livres/great-leads.md` |
-| **Vrai coupable / Open loop / Confidence** (techniques natives) | `meta-ads/native-ads.md` |
-
-### 🎯 Validation copy (à consulter quasi systématiquement pour le copy)
+### 🎯 Validation copy (consulter quasi systématiquement pour le copy)
 - `copywriting/golden-nuggets.md` ← philosophie voix client + test LVL 3 + règles statiques
 
 ---
@@ -55,69 +40,43 @@
 
 > **Moins de fiches lues, mieux exploitées >>> plus de fiches lues, bouillie produite.**
 
-Pour une demande standard : **3 à 5 fiches max**. Au-delà tu te perds.
+Pour une demande standard : **1 à 3 fiches max** (vu qu'on a moins de sources).
 
 ---
 
 ## 📋 Exemples concrets de routage
 
 ### "10 hooks pour des statiques unaware sur [produit X]"
-Fiches à lire (4) :
-- structure-ad-copy.md (hook/statique)
-- breakthrough-advertising.md (awareness Schwartz + intensification)
-- adweek-copywriting.md (1ère phrase courte)
-- golden-nuggets.md (validation LVL 3)
-
-❌ IGNORER : native-ads, andromeda, funnel-conscience, great-leads, ogilvy, cialdini, positioning, boron-letters, scientific-advertising
-
-→ Si Louis ne précise pas le produit/persona/triggers : **lui demander UNE seule question** ("Tu cibles quel persona / quel trigger principal ?").
+Fiches à lire (2) :
+- meta-ads/structure-ad-copy.md (hook/statique)
+- copywriting/golden-nuggets.md (validation)
 
 ### "Native ad complète sur trigger MATIN pour [persona X]"
-Fiches à lire (3) :
-- native-ads.md (LA base)
-- breakthrough-advertising.md (techniques d'intensification)
-- golden-nuggets.md (validation)
-
-❌ IGNORER : structure-ad-copy, andromeda, funnel-conscience, livres autres
+Fiches à lire (2) :
+- meta-ads/native-ads.md
+- copywriting/golden-nuggets.md
 
 ### "Mon ROAS est tombé de 3 à 1,7 sur ma CBO"
 Fiches à lire (1) :
-- meta-ads-andromeda-2026.md (Playbook 2)
+- meta-ads/meta-ads-andromeda-2026.md
 
-❌ IGNORER : tout le copy
-
-→ Demander à Louis : son budget actuel, depuis combien de jours il tourne ces créas, son AOV.
-
-### "Comment positionner ma marque face aux concurrents ?"
-Fiches à lire (1-2) :
-- livres/positioning.md
-- livres/breakthrough-advertising.md (sophistication marché)
-
-→ Demander à Louis : quels concurrents, dans quelle catégorie il est, qu'est-ce qu'il offre de différent.
+### "Comment structurer un script VSL ?"
+Fiches à lire (1) :
+- copywriting/funnel-et-niveau-de-conscience.md
 
 ---
 
-## 📂 Inventaire des fiches disponibles
+## 📂 Inventaire des fiches ACTIVES
 
 ```
-livres/
-├── scientific-advertising.md    (Hopkins, 1923)
-├── breakthrough-advertising.md  (Schwartz, 1966)
-├── boron-letters.md             (Halbert, 1984)
-├── great-leads.md               (Masterson/Forde)
-├── adweek-copywriting.md        (Sugarman)
-├── positioning.md               (Ries & Trout)
-├── influence.md                 (Cialdini)
-└── ogilvy.md                    (Ogilvy)
-
 meta-ads/
-├── structure-ad-copy.md         (analyse 146 winners)
-├── native-ads.md                (5 concepts + 7 titres + 4 structures)
-└── meta-ads-andromeda-2026.md   (CBO + KPIs + 3 playbooks)
+├── structure-ad-copy.md         (analyse 146 winners — hooks/titres/ad copy statiques Meta)
+├── native-ads.md                (5 concepts + 7 titres + 4 structures natives)
+└── meta-ads-andromeda-2026.md   (CBO + KPIs + 3 playbooks troubleshooting)
 
 copywriting/
-├── funnel-et-niveau-de-conscience.md  (5 awareness + blocs script)
-└── golden-nuggets.md                  (voix client + LVL 1/2/3 + statiques)
+├── funnel-et-niveau-de-conscience.md  (5 awareness + blocs script par niveau)
+└── golden-nuggets.md                  (voix client + LVL 1/2/3 + règles statiques)
 ```
 
-**Total : 13 fiches théoriques.** Pas de données client.
+**Total : 5 fiches actives.** Test pour voir si le bot s'en sort mieux avec moins de sources.

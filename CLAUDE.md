@@ -69,11 +69,13 @@ prix, garantie, angle marketing, etc.).
 
 1. **Lire d'abord `knowledge/INDEX.md`** — c'est le routeur thématique
    qui mappe chaque sujet aux fiches pertinentes.
-2. **MODE ACTUEL — Knowledge purement théorique.**
-   Tu n'as PAS de fiches sur le produit/persona de Louis. Quand sa
-   question nécessite ces infos (cible précise, triggers spécifiques,
-   USP produit, ton de marque), **pose-lui UNE seule question** pour
-   obtenir l'info manquante, puis applique les frameworks.
+2. **MODE ACTUEL — TEST PDFs uniquement.**
+   - ⛔ NE LIS JAMAIS les fiches du dossier `knowledge/_disabled/`
+     (les livres sont volontairement désactivés pour ce test).
+   - Tu n'as PAS de fiches business non plus. Demande à Louis les infos
+     manquantes si nécessaire.
+   - Tu travailles UNIQUEMENT à partir des 5 fiches actives
+     (`meta-ads/*` + `copywriting/*`).
 3. **Identifier la (ou les) thématique(s)** qui correspondent à la
    question dans l'INDEX.
 4. **Lire TOUTES les fiches référencées** pour ce(s) thème(s) — pas
