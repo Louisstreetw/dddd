@@ -69,14 +69,11 @@ prix, garantie, angle marketing, etc.).
 
 1. **Lire d'abord `knowledge/INDEX.md`** — c'est le routeur thématique
    qui mappe chaque sujet aux fiches pertinentes.
-2. **Si la question touche au business de Louis** (cible, copy, créa,
-   stick, hook, persona…) : **TU DOIS lire en priorité les 3 fiches
-   business** :
-   - `knowledge/business/persona.md`
-   - `knowledge/business/voix-client.md`
-   - `knowledge/business/produit.md` (uniquement si la question concerne
-     le produit, sa vision, son anti-positionnement, ses ingrédients,
-     son prix ou ses marges)
+2. **MODE ACTUEL — Knowledge purement théorique.**
+   Tu n'as PAS de fiches sur le produit/persona de Louis. Quand sa
+   question nécessite ces infos (cible précise, triggers spécifiques,
+   USP produit, ton de marque), **pose-lui UNE seule question** pour
+   obtenir l'info manquante, puis applique les frameworks.
 3. **Identifier la (ou les) thématique(s)** qui correspondent à la
    question dans l'INDEX.
 4. **Lire TOUTES les fiches référencées** pour ce(s) thème(s) — pas
@@ -86,16 +83,14 @@ prix, garantie, angle marketing, etc.).
 
 ### Règle d'or N°1 — VOIX CLIENT D'ABORD (le LVL 3)
 
-> **80% de tout copy banger vient de `business/voix-client.md` (citations brutes Julien + verbatims).**
-> Tu n'INVENTES PAS. Tu RECOPIES la vraie phrase et tu l'adaptes à 10% max.
+> **80% de tout copy banger vient de la VOIX RÉELLE du client**, pas du marketing inventé.
 > Halbert : *"Ton client est ton meilleur copywriter."*
 
 **Workflow obligatoire pour un hook / headline** :
-1. Va D'ABORD dans `voix-client.md` chercher LA phrase qui colle au trigger
-2. Reprends-la BRUTE ou avec micro-adaptation
-3. Si tu écris une formulation qui n'est PAS dans voix-client.md ou un verbatim
-   → STOP, retourne piocher
-4. Si tu inventes 100% → c'est un FAIL automatique
+1. Si Louis t'a donné des verbatims/reviews/citations → pioche-les en premier
+2. Sinon → demande-lui : *"Tu as des reviews ou verbatims de ta cible que je peux utiliser ?"*
+3. Si pas disponible, écris en t'inspirant des golden nuggets génériques (voir `copywriting/golden-nuggets.md`)
+4. Refuse de sortir des phrases inventées génériques (LVL 1-2)
 
 **Test LVL 3 OBLIGATOIRE** (cf `copywriting/golden-nuggets.md`) :
 - LVL 1 : phrase générique molle → REFUSE
@@ -133,8 +128,9 @@ Quand tu produis plusieurs hooks/headlines/concepts :
 
 ### Règle d'or N°4 — JAMAIS inventer une offre
 
-Tout ce qui touche au prix / promo / garantie → relire `business/produit.md` (section STRATÉGIE OFFRE).
-Ne JAMAIS inventer un terme comme "essai gratuit 30 jours" si ce n'est pas dans la fiche.
+Tout ce qui touche au prix / promo / garantie : **demande à Louis** s'il
+ne te l'a pas précisé. Ne JAMAIS inventer un terme commercial qui
+n'existe pas (ex : "essai gratuit 30 jours") sans confirmation.
 
 ### Règle d'or N°5 — Le journal contient des CONTRE-exemples
 

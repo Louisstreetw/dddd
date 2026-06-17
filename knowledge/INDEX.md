@@ -4,22 +4,17 @@
 
 ---
 
-## 🔥 RÈGLE D'OR ABSOLUE — VOIX CLIENT
+## ⚠️ MODE ACTUEL — Consultant pur (sans données client)
 
-> **80% de tout copy banger vient de `business/voix-client.md`.**
-> Tu n'INVENTES PAS. Tu RECOPIES la vraie phrase et tu l'adaptes max 10%.
-> Halbert : *"Ton client est ton meilleur copywriter."*
+> Cette knowledge contient **uniquement les frameworks théoriques** (livres + PDFs de cours).
+> Tu n'as PAS de fiches sur le produit/persona/voix-client de Louis.
+> Quand Louis pose une question liée à SON business, **demande-lui les infos nécessaires** au lieu de supposer.
 
 ---
 
 ## 🗺 ARBRE DE DÉCISION — Quelle fiche pour quelle demande ?
 
-### 🟢 TOUJOURS lire (sur TOUTE demande copy : hooks, titres, ad copy, native ad, etc.)
-- `business/persona.md` ← cible, douleurs, triggers, sous-personas, mots autorisés/bannis
-- `business/voix-client.md` ← citations brutes Julien + verbatims (matière première)
-- `copywriting/golden-nuggets.md` ← validation LVL 3 + voix client philosophie
-
-### 🟡 + Selon le TYPE DE COPY demandé (UNE seule de ces fiches)
+### 🟡 Selon le TYPE DE COPY demandé (UNE seule de ces fiches en base)
 
 | Si la demande parle de... | Fiche de référence | IGNORER ces fiches |
 |---------------------------|---------------------|--------------------|
@@ -27,22 +22,22 @@
 | **Hook** / **titre** / **headline** (statique Meta) | `meta-ads/structure-ad-copy.md` | native-ads, andromeda |
 | **Statique** / **carrousel** / **image fixe** | `meta-ads/structure-ad-copy.md` | native-ads, andromeda |
 | **VSL** / **vidéo longue** / **script vidéo** | `copywriting/funnel-et-niveau-de-conscience.md` | structure-ad-copy, native-ads, andromeda |
-| **Mail** / **email** / **newsletter** | `livres/boron-letters.md` (Halbert) | structure-ad-copy, native-ads |
+| **Mail** / **email** / **newsletter** / **sales letter** | `livres/boron-letters.md` (Halbert) | structure-ad-copy, native-ads |
 | **Page produit** / **landing page** | `livres/ogilvy.md` + `livres/scientific-advertising.md` | andromeda |
 
-### 🔵 + Si la demande est STRATÉGIQUE / CAMPAGNE (UNE seule)
+### 🔵 Si la demande est STRATÉGIQUE / CAMPAGNE (UNE seule)
 
 | Si la demande parle de... | Fiche de référence |
 |---------------------------|---------------------|
 | **Testing** / **CBO** / **lancement** / **scaling** / **budget** / **ROAS** / **CPA** / **CPM** / **CTR** / **résultats** / **pas rentable** | `meta-ads/meta-ads-andromeda-2026.md` |
 | **Awareness** / **niveau de conscience** / **funnel** | `copywriting/funnel-et-niveau-de-conscience.md` + `livres/breakthrough-advertising.md` |
-| **Positionnement** marque / différenciation | `livres/positioning.md` + `business/produit.md` (section Vision) |
+| **Positionnement** marque / différenciation | `livres/positioning.md` |
 
-### ⚪ + Selon la TECHNIQUE COPYWRITING à activer (UNE ou DEUX max)
+### ⚪ Selon la TECHNIQUE COPYWRITING à activer (UNE ou DEUX max)
 
 | Si tu veux activer... | Fiche de référence |
 |------------------------|---------------------|
-| **Spécificité chiffrée** (3 ans, 90%, etc.) | `livres/scientific-advertising.md` (Hopkins) |
+| **Spécificité chiffrée** (chiffres, durées) | `livres/scientific-advertising.md` (Hopkins) |
 | **1ère phrase ULTRA courte** / slippery slide / 31 triggers psy | `livres/adweek-copywriting.md` (Sugarman) |
 | **Promise + Intrigue + Mécanisme + Émotion** | `livres/breakthrough-advertising.md` (Schwartz) |
 | **Mots magiques** (how to, new, suddenly) | `livres/ogilvy.md` |
@@ -51,8 +46,8 @@
 | **Type de lead** selon awareness | `livres/great-leads.md` |
 | **Vrai coupable / Open loop / Confidence** (techniques natives) | `meta-ads/native-ads.md` |
 
-### ⛔ NE PAS LIRE sauf si explicitement demandé
-- `business/produit.md` ← UNIQUEMENT pour questions sur ingrédients, USP, mécanisme à expliquer, prix, vision marque, anti-positionnement
+### 🎯 Validation copy (à consulter quasi systématiquement pour le copy)
+- `copywriting/golden-nuggets.md` ← philosophie voix client + test LVL 3 + règles statiques
 
 ---
 
@@ -60,40 +55,69 @@
 
 > **Moins de fiches lues, mieux exploitées >>> plus de fiches lues, bouillie produite.**
 
-Pour une demande standard : **4 à 6 fiches max**. Au-delà tu te perds.
+Pour une demande standard : **3 à 5 fiches max**. Au-delà tu te perds.
 
 ---
 
 ## 📋 Exemples concrets de routage
 
-### "10 hooks pour mes statiques unaware"
-Fiches à lire (5) :
-- persona.md, voix-client.md, golden-nuggets.md (les 3 toujours)
+### "10 hooks pour des statiques unaware sur [produit X]"
+Fiches à lire (4) :
 - structure-ad-copy.md (hook/statique)
 - breakthrough-advertising.md (awareness Schwartz + intensification)
+- adweek-copywriting.md (1ère phrase courte)
+- golden-nuggets.md (validation LVL 3)
 
-❌ IGNORER : native-ads, andromeda, funnel-conscience, great-leads, ogilvy, cialdini, positioning, boron-letters, produit
+❌ IGNORER : native-ads, andromeda, funnel-conscience, great-leads, ogilvy, cialdini, positioning, boron-letters, scientific-advertising
 
-### "Native ad complète sur trigger MATIN"
-Fiches à lire (5) :
-- persona.md, voix-client.md, golden-nuggets.md
+→ Si Louis ne précise pas le produit/persona/triggers : **lui demander UNE seule question** ("Tu cibles quel persona / quel trigger principal ?").
+
+### "Native ad complète sur trigger MATIN pour [persona X]"
+Fiches à lire (3) :
 - native-ads.md (LA base)
-- produit.md (mécanisme à dramatiser)
+- breakthrough-advertising.md (techniques d'intensification)
+- golden-nuggets.md (validation)
 
 ❌ IGNORER : structure-ad-copy, andromeda, funnel-conscience, livres autres
 
 ### "Mon ROAS est tombé de 3 à 1,7 sur ma CBO"
-Fiches à lire (2-3) :
+Fiches à lire (1) :
 - meta-ads-andromeda-2026.md (Playbook 2)
-- persona.md (vérifier cohérence créa/persona)
-- produit.md (vérifier marges)
 
 ❌ IGNORER : tout le copy
 
-### "Comment positionner ma marque face aux concurrents ?"
-Fiches à lire (3) :
-- livres/positioning.md
-- business/produit.md (section Vision + Anti-positionnement)
-- business/persona.md
+→ Demander à Louis : son budget actuel, depuis combien de jours il tourne ces créas, son AOV.
 
-❌ IGNORER : tout le tactique copy / meta
+### "Comment positionner ma marque face aux concurrents ?"
+Fiches à lire (1-2) :
+- livres/positioning.md
+- livres/breakthrough-advertising.md (sophistication marché)
+
+→ Demander à Louis : quels concurrents, dans quelle catégorie il est, qu'est-ce qu'il offre de différent.
+
+---
+
+## 📂 Inventaire des fiches disponibles
+
+```
+livres/
+├── scientific-advertising.md    (Hopkins, 1923)
+├── breakthrough-advertising.md  (Schwartz, 1966)
+├── boron-letters.md             (Halbert, 1984)
+├── great-leads.md               (Masterson/Forde)
+├── adweek-copywriting.md        (Sugarman)
+├── positioning.md               (Ries & Trout)
+├── influence.md                 (Cialdini)
+└── ogilvy.md                    (Ogilvy)
+
+meta-ads/
+├── structure-ad-copy.md         (analyse 146 winners)
+├── native-ads.md                (5 concepts + 7 titres + 4 structures)
+└── meta-ads-andromeda-2026.md   (CBO + KPIs + 3 playbooks)
+
+copywriting/
+├── funnel-et-niveau-de-conscience.md  (5 awareness + blocs script)
+└── golden-nuggets.md                  (voix client + LVL 1/2/3 + statiques)
+```
+
+**Total : 13 fiches théoriques.** Pas de données client.
