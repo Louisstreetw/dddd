@@ -4,10 +4,25 @@
 
 ---
 
+## 🔥 PRIORITÉ ABSOLUE — BUSINESS DE LOUIS
+
+> **Pour TOUTE question liée au stick / à la marque / à la cible / au copy** : ces 5 fiches DOIVENT être lues EN PREMIER, avant toute fiche livre.
+
+- `business/persona.md` — Le persona complet (démographique + psychographique + sous-personas + douleurs + désirs + objections + déclencheurs)
+- `business/produit.md` — Le produit (composition, mécanisme, USP, ce qu'on dit / ne dit pas)
+- `business/offre.md` — Les offres actives (29,90€ principal + 17,90€ entrée + garantie 30j)
+- `business/positionnement.md` — Vision marque + ton + mots autorisés/bannis + anti-positionnement
+- `business/voix-client.md` — Citations brutes Julien + verbatims (à utiliser EN PRIORITÉ en copy)
+
+**Règle d'or** : aucun copy / hook / brief ne se rédige sans avoir lu ces 5 fiches.
+
+---
+
 ## 🎯 NIVEAUX DE CONSCIENCE / AWARENESS DU PROSPECT
 
 Pour identifier où en est le prospect (Unaware → Most Aware), choisir le bon angle d'attaque, structurer un script :
 
+- `business/persona.md` (section "Persona × Niveaux de conscience")
 - `livres/breakthrough-advertising.md` (Schwartz — section "Awareness du prospect", THE source originale)
 - `livres/great-leads.md` (Masterson/Forde — les 6 leads × awareness state)
 - `copywriting/funnel-et-niveau-de-conscience.md` (application e-com + blocs de script par niveau)
@@ -27,6 +42,9 @@ Pour positionner ton offre face à la concurrence selon la maturité du marché 
 
 Pour écrire un titre qui stop le scroll / fait lire la suite :
 
+- `business/persona.md` (douleurs + désirs + golden nuggets à utiliser)
+- `business/voix-client.md` (citations brutes à recoller en titre)
+- `business/positionnement.md` (mots autorisés / bannis)
 - `livres/scientific-advertising.md` (Hopkins — Le titre)
 - `livres/breakthrough-advertising.md` (Schwartz — Le headline, formule Promise + Intrigue + Mécanisme + Émotion)
 - `livres/ogilvy.md` (Ogilvy — HEADLINES, ses règles testées + mots magiques)
@@ -41,6 +59,10 @@ Pour écrire un titre qui stop le scroll / fait lire la suite :
 
 Pour écrire le corps du message après le hook :
 
+- `business/persona.md` (douleurs + objections à désarmer + déclencheurs)
+- `business/voix-client.md` (citations brutes Julien + verbatims)
+- `business/produit.md` (mécanisme à expliquer + USP)
+- `business/offre.md` (promesse, garantie, prix à intégrer)
 - `livres/ogilvy.md` (Ogilvy — body copy, long copy)
 - `livres/breakthrough-advertising.md` (Schwartz — les 7 techniques breakthrough, intensification, gradualization, etc.)
 - `livres/adweek-copywriting.md` (Sugarman — slippery slide, seeds of curiosity, 31 triggers)

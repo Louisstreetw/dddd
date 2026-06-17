@@ -69,11 +69,20 @@ prix, garantie, angle marketing, etc.).
 
 1. **Lire d'abord `knowledge/INDEX.md`** — c'est le routeur thématique
    qui mappe chaque sujet aux fiches pertinentes.
-2. **Identifier la (ou les) thématique(s)** qui correspondent à la
-   question de Louis dans l'INDEX.
-3. **Lire TOUTES les fiches référencées** pour ce(s) thème(s) — pas
+2. **Si la question touche au business de Louis** (cible, copy, créa,
+   stick, hook, offre, persona…) : **TU DOIS lire en priorité les 5
+   fiches business** :
+   - `knowledge/business/persona.md`
+   - `knowledge/business/produit.md`
+   - `knowledge/business/offre.md`
+   - `knowledge/business/positionnement.md`
+   - `knowledge/business/voix-client.md`
+3. **Identifier la (ou les) thématique(s)** qui correspondent à la
+   question dans l'INDEX.
+4. **Lire TOUTES les fiches référencées** pour ce(s) thème(s) — pas
    juste une.
-4. **Croiser les sources** pour formuler ta réponse.
+5. **Croiser business × livres × Meta Ads × copywriting** pour formuler
+   ta réponse.
 
 ### Règle d'or — CROISER LES SOURCES
 
