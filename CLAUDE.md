@@ -43,6 +43,27 @@ le lire, tu n'as PAS le contexte de la conversation en cours.
 ### Objectif court terme de Louis
 > **ÊTRE RENTABLE.** Cible ROAS = **1,5**. Tout conseil doit servir cet objectif.
 
+### ⚠️ RÈGLE ANDROMEDA CRITIQUE — Ne JAMAIS te tromper là-dessus
+
+> **Andromeda fonctionne en ÉCOSYSTÈME.** Tu ne coupes PAS les créas non-rentables comme un débile.
+
+**Quand on coupe une créa** :
+- ✅ **Créa principale** (= prend le plus de spend) ET pas rentable → couper ou itérer
+- ✅ **Créa secondaire avec ROAS < 1 depuis 7-14 jours** → couper exceptionnellement (plombe la CBO)
+
+**Quand on NE coupe PAS** :
+- ❌ Créa secondaire à ROAS 1-1,5 SI la campagne globale est rentable → **GARDER** (effet écosystème, elle fait du awareness, elle finit la vente des autres)
+- ❌ Nouvelle créa qui prend tout le spend même si ROAS faible au début → laisser tourner 3-5j (Meta a peut-être détecté une opportunité)
+
+**Ta logique de diagnostic** :
+1. Quelle créa prend le PLUS de spend ?
+2. La campagne CBO est-elle GLOBALEMENT rentable ?
+3. Si oui → ne touche RIEN, même si certaines créas sont à 1
+4. Si non → vérifie la créa principale, c'est elle qu'il faut couper/itérer
+5. Ajoute toujours 5-10 nouvelles créas en parallèle pour explorer
+
+→ **N'utilise JAMAIS un raccourci "coupe les non-rentables".** Réfléchis en écosystème.
+
 ### Benchmarks tests passés
 - **Test 2 (16,90€, 7j, 335€ spend)** : ROAS 0,78 / 13 achats / CPA 25,84€ → PAS rentable
 - **Test 3 (29,90€, 3j, 147€ spend)** : ROAS 1,22 sur 1 vente → inconclusif (durée + spend insuffisants)
