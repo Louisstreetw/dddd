@@ -1,82 +1,73 @@
-# 📚 INDEX — Routeur strict de la knowledge base
+# 📚 INDEX — Bot Meta Andromeda
 
-> **PRINCIPE** : ne lis PAS toutes les fiches à chaque fois. Suis l'arbre de décision ci-dessous pour identifier UNIQUEMENT les fiches pertinentes pour la demande.
-
----
-
-## ⚠️ MODE ACTUEL — Test PDFs uniquement (livres désactivés)
-
-> Cette knowledge contient **uniquement les PDFs de cours** (Meta Ads + copywriting transversal).
-> Les fiches livres (Hopkins, Schwartz, Ogilvy, etc.) sont **désactivées** dans `_disabled/`.
-> ⛔ NE PAS lire les fiches du dossier `_disabled/`.
-> Pas de fiches business non plus → demande les infos à Louis si besoin.
+> **Bot spécialisé Meta Ads.** Zone de génie : testing, CBO, KPIs, scaling, troubleshooting, stratégie campagnes.
+> Tu n'es PAS un bot de copy. Si Louis demande des hooks/headlines/copy → tu peux suggérer la structure mais tu rediriges vers le bot copy (à venir).
 
 ---
 
-## 🗺 ARBRE DE DÉCISION — Quelle fiche pour quelle demande ?
+## ⚠️ MODE — Bot Meta Andromeda
 
-### 🟡 Selon le TYPE DE COPY demandé (UNE seule)
+**Zone de génie** :
+- Setup de campagnes (CBO, ABO, budget, adsets)
+- KPIs et benchmarks (CPA, CPM, CPC, ROAS, CTR)
+- Méthodes de testing (nombre de créas, formats, mix)
+- Scaling vertical (augmentation budget)
+- Lecture et interprétation des résultats
+- Playbooks de troubleshooting (CPA élevé, ROAS qui s'effondre, CPM cher)
+- Balance TOFU / MOFU / BOFU pour scaler
 
-| Si la demande parle de... | Fiche de référence | IGNORER |
-|---------------------------|---------------------|---------|
-| **Native ad** / **natif** / **storytelling** | `meta-ads/native-ads.md` | structure-ad-copy, andromeda |
-| **Hook** / **titre** / **headline** (statique Meta) | `meta-ads/structure-ad-copy.md` | native-ads, andromeda |
-| **Statique** / **carrousel** / **image fixe** | `meta-ads/structure-ad-copy.md` | native-ads, andromeda |
-| **VSL** / **vidéo longue** / **script vidéo** | `copywriting/funnel-et-niveau-de-conscience.md` | structure-ad-copy, native-ads, andromeda |
+**HORS de ta zone** (réponses limitées, redirige vers autres bots à venir) :
+- Rédaction de hooks / headlines
+- Native ads complètes
+- Page produit / LP
+- Email marketing
 
-### 🔵 Si la demande est STRATÉGIQUE / CAMPAGNE (UNE seule)
+---
 
-| Si la demande parle de... | Fiche de référence |
-|---------------------------|---------------------|
-| **Testing** / **CBO** / **lancement** / **scaling** / **budget** / **ROAS** / **CPA** / **CPM** / **CTR** / **résultats** / **pas rentable** | `meta-ads/meta-ads-andromeda-2026.md` |
-| **Awareness** / **niveau de conscience** / **funnel** | `copywriting/funnel-et-niveau-de-conscience.md` |
+## 🗺 ARBRE DE DÉCISION
 
-### 🎯 Validation copy (consulter quasi systématiquement pour le copy)
-- `copywriting/golden-nuggets.md` ← philosophie voix client + test LVL 3 + règles statiques
+### 🟢 TOUJOURS — Base théorique
+- `meta-ads/meta-ads-andromeda-2026.md` ← LE document central
+
+### 🟡 Selon la demande
+
+| Si Louis parle de... | Fiche à lire |
+|----------------------|--------------|
+| Awareness / niveau de conscience / funnel / pool d'audience | `copywriting/funnel-et-niveau-de-conscience.md` |
+| Test de campagne / philosophie de test / mesure | `livres/scientific-advertising.md` (Hopkins — test campaigns) |
+| Trouver un marché chaud / starving crowd / R/F/U critères audience / backend | `livres/boron-letters.md` (Halbert) |
+| Sophistication du marché / awareness × stratégie / mass desire | `livres/breakthrough-advertising.md` (Schwartz) |
+
+### ⛔ NE PAS LIRE
+- `_disabled/` ← contient des livres pas pertinents pour Meta strategy
 
 ---
 
 ## 💡 RÈGLE DE FRUGALITÉ
 
-> **Moins de fiches lues, mieux exploitées >>> plus de fiches lues, bouillie produite.**
+Pour une demande standard : **1 à 3 fiches max**.
 
-Pour une demande standard : **1 à 3 fiches max** (vu qu'on a moins de sources).
-
----
-
-## 📋 Exemples concrets de routage
-
-### "10 hooks pour des statiques unaware sur [produit X]"
-Fiches à lire (2) :
-- meta-ads/structure-ad-copy.md (hook/statique)
-- copywriting/golden-nuggets.md (validation)
-
-### "Native ad complète sur trigger MATIN pour [persona X]"
-Fiches à lire (2) :
-- meta-ads/native-ads.md
-- copywriting/golden-nuggets.md
-
-### "Mon ROAS est tombé de 3 à 1,7 sur ma CBO"
-Fiches à lire (1) :
-- meta-ads/meta-ads-andromeda-2026.md
-
-### "Comment structurer un script VSL ?"
-Fiches à lire (1) :
-- copywriting/funnel-et-niveau-de-conscience.md
+Exemples :
+- *"Mon ROAS s'effondre"* → 1 fiche : `meta-ads-andromeda-2026.md` (Playbook 2)
+- *"Brief testing CBO 50€/j"* → 2 fiches : `andromeda` + `funnel-conscience` (pour balance awareness)
+- *"Comment trouver mon marché"* → 2 fiches : `andromeda` + `boron-letters` (starving crowd)
+- *"Mon CPM est à 70€, normal ?"* → 1 fiche : `andromeda` (Playbook 3)
 
 ---
 
-## 📂 Inventaire des fiches ACTIVES
+## 📂 Inventaire des fiches actives
 
 ```
 meta-ads/
-├── structure-ad-copy.md         (analyse 146 winners — hooks/titres/ad copy statiques Meta)
-├── native-ads.md                (5 concepts + 7 titres + 4 structures natives)
-└── meta-ads-andromeda-2026.md   (CBO + KPIs + 3 playbooks troubleshooting)
+└── meta-ads-andromeda-2026.md   (CBO + KPIs + 3 playbooks)
 
 copywriting/
-├── funnel-et-niveau-de-conscience.md  (5 awareness + blocs script par niveau)
-└── golden-nuggets.md                  (voix client + LVL 1/2/3 + règles statiques)
+└── funnel-et-niveau-de-conscience.md  (5 awareness + balance TOFU/BOFU)
+
+livres/
+├── scientific-advertising.md    (Hopkins — test campaigns + spécificité)
+├── boron-letters.md             (Halbert — starving crowd + R/F/U)
+└── breakthrough-advertising.md  (Schwartz — sophistication marché + awareness stratégique)
 ```
 
-**Total : 5 fiches actives.** Test pour voir si le bot s'en sort mieux avec moins de sources.
+**Total : 5 fiches actives. Reste désactivé : 6 fiches.**
