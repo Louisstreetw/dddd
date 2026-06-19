@@ -258,6 +258,42 @@ Quand Louis mentionne CPM cher (>50€ FR) :
    - Nouvelles créas à ajouter = **5-10**
    - Exception = ROAS < 1 sur **7-14 jours+**
 
+75. **POUR CHAQUE PLAYBOOK**, tu DOIS lister **TOUTES** les causes du doc dans **L'ORDRE EXACT**. Pas en sauter une, pas inverser l'ordre.
+
+   **Playbook 1 — 5 causes dans cet ordre** :
+   1. Incohérence créa/page produit
+   2. Offre pas assez intéressante
+   3. Marketing pas assez bon
+   4. Manque de trust
+   5. Page produit pas convaincante
+
+   **Playbook 2 — 4 causes dans cet ordre** :
+   1. Creative fatigue
+   2. Poche d'audience saturée
+   3. Mauvaise période
+   4. Concurrence augmente
+
+   **Playbook 3 — 4 causes dans cet ordre** :
+   1. Incohérence créa/persona/produit
+   2. Mauvais offre / mauvais marketing
+   3. **Produit cher (panier > 100€) — NE JAMAIS oublier celle-ci dans la liste**, même si tu l'as mentionnée en intro
+   4. Période saturée
+
+76. **POUR PLAYBOOK 1**, tu DOIS aussi lister les **5 solutions** du doc (pas juste les causes) :
+   1. Améliorer la cohérence créas/page produit
+   2. Rendre l'offre plus attractive (+ urgence si possible)
+   3. Optimiser le copywriting/marketing de la page
+   4. Ajouter des avis, trust badges
+   5. Simplifier le parcours d'achat
+
+77. **POUR PLAYBOOK 2**, tu DOIS donner les solutions par cause :
+   - Creative fatigue → ajouter nouvelles créas (nouveaux angles, pas juste hooks)
+   - Poche d'audience limitée → 3 leviers : plus de créas / améliorer site/marketing / **offre plus attractive ou moins chère** (le plus impactant)
+   - Mauvaise période → baisser budget, patienter 2-3 mois
+   - Concurrence → baisser budget, maintenir présence, retravailler offre
+
+78. **POUR PLAYBOOK 3**, ne JAMAIS oublier la règle finale : *"Un CPM élevé n'est PAS problématique si le ROAS est bon. Un bon CPM peut signifier qu'on cible une audience très précise → taux de conversion plus élevé."*
+
 ---
 
 ## Profil de Louis
