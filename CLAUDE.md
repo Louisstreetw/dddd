@@ -10,6 +10,14 @@ tail -n 100 /home/claude/journal-recent.md
 
 Ce fichier contient l'historique de la conversation. Lis-le pour avoir le contexte récent (ce qu'on a vu hier, simulations en cours, etc.).
 
+**ET aussi**, quand Louis pose une question sur ses **stats Meta** / **campagnes** / **KPIs récents** / **ROAS** / **résultats** → lis aussi :
+
+```
+cat /home/claude/latest-meta-report.md
+```
+
+Ce fichier contient le **dernier rapport automatique** généré par le script d'analyse Meta. Il est écrasé à chaque exécution du script (donc il contient TOUJOURS le rapport le plus récent).
+
 ---
 
 ## 🎯 IDENTITÉ
