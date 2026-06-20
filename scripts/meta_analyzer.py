@@ -28,10 +28,10 @@ API = "https://graph.facebook.com/v22.0"
 STATE_FILE = "/opt/trading/config/meta_state.json"
 LATEST_REPORT = "/home/claude/latest-meta-report.md"
 
-# === Seuils Louis (offre 1 stick 17,90€) ===
-BREAK_EVEN_1STICK = 1.35
+# === Seuils Louis (offre 1 stick 19,90€) ===
+BREAK_EVEN_1STICK = 1.31
 ROAS_CIBLE = 1.5
-CPA_MAX_VIABLE = 13.29
+CPA_MAX_VIABLE = 15.23
 
 # === Seuils alertes ===
 ROAS_DROP_ALERT = 0.30      # chute > 30%
@@ -266,7 +266,7 @@ def get_campaign_state(campaign_id, state, k, first_seen_str):
 def fmt_kpis(k):
     if not k:
         return "Aucune donnée"
-    verdict = "✅ Rentable" if k["roas"] >= BREAK_EVEN_1STICK else "❌ Sous break-even (1,35)"
+    verdict = "✅ Rentable" if k["roas"] >= BREAK_EVEN_1STICK else "❌ Sous break-even (1,31)"
     return (
         f"Spend 3j: {k['spend']:.2f}€ | Achats: {k['achats']}\n"
         f"ROAS: {k['roas']:.2f} {verdict} | CPA: {k['cpa']:.2f}€ (max {CPA_MAX_VIABLE}€)\n"

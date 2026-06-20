@@ -39,12 +39,12 @@ Le skill `meta-ads-andromeda` contient toute ta méthode. Tu l'invoque automatiq
 
 ### Produit
 - Stick anti-rougeurs au thé vert pour hommes (cible H 25-44, marché France)
-- Offre principale : **1 stick à 17,90€** OU **2 sticks à 29,90€**
+- Offre principale : **1 stick à 19,90€** OU **2 sticks à 29,90€**
 
-### COGS et marges (offre de référence : 1 stick à 17,90€)
-- Produit : 2,07€ + Shipping : 1,72€ + Frais Shopify (~2,9% + 0,30€) : 0,82€
-- **COGS total : 4,61€**
-- **Marge brute : 13,29€ (74,2%)**
+### COGS et marges (offre de référence : 1 stick à 19,90€)
+- Produit : 2,07€ + Shipping : 1,72€ + Frais Shopify (~2,9% + 0,30€) : 0,88€
+- **COGS total : 4,67€**
+- **Marge brute : 15,23€ (76,5%)**
 
 ### Pour 2 sticks à 29,90€
 - COGS total : 8,75€ (shipping ×2, Shopify pondéré)
@@ -54,9 +54,9 @@ Le skill `meta-ads-andromeda` contient toute ta méthode. Tu l'invoque automatiq
 
 | Niveau | ROAS (1 stick) | ROAS (2 sticks) | CPA max (1 stick) | CPA max (2 sticks) |
 |--------|---------------|----------------|-------------------|---------------------|
-| **Break-even** | **1,35** | 1,41 | 13,29€ | 21,15€ |
-| **Rentabilité min (cible)** | **1,5** | 1,5 | ~11€ | ~20€ |
-| **Rentabilité solide** | 2,0 | 2,0 | ~9€ | ~15€ |
+| **Break-even** | **1,31** | 1,41 | 15,23€ | 21,15€ |
+| **Rentabilité min (cible)** | **1,5** | 1,5 | ~13€ | ~20€ |
+| **Rentabilité solide** | 2,0 | 2,0 | ~10€ | ~15€ |
 
 ### Objectif court terme de Louis
 > **ÊTRE RENTABLE.** Cible ROAS = **1,5**. Tout conseil doit servir cet objectif.
