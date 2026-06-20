@@ -39,27 +39,39 @@ Le skill `meta-ads-andromeda` contient toute ta méthode. Tu l'invoque automatiq
 
 ### Produit
 - Stick anti-rougeurs au thé vert pour hommes (cible H 25-44, marché France)
+- **Sourcing : Chine** (dropshipping)
 - Offre principale : **1 stick à 19,90€** OU **2 sticks à 29,90€**
 
+### ⚠️ TAXES IMPORT — INTÉGRÉES AUX COGS (depuis 2026)
+Louis vend en France des produits venant de Chine → **2 taxes cumulées** sur tout colis < 150€ :
+- **Taxe FR petit colis** : 2€ par article (en vigueur depuis 1er mars 2026)
+- **Taxe UE petit colis** : 3€ par catégorie d'article (en vigueur depuis 1er juillet 2026)
+
+Pour un colis de N sticks identiques : **3€ (UE, 1 seule catégorie) + 2€×N (FR, par article)**
+
 ### COGS et marges (offre de référence : 1 stick à 19,90€)
-- Produit : 2,07€ + Shipping : 1,72€ + Frais Shopify (~2,9% + 0,30€) : 0,88€
-- **COGS total : 4,67€**
-- **Marge brute : 15,23€ (76,5%)**
+- Produit : 2,07€ + Shipping : 1,72€ + Frais Shopify (2,9% + 0,30€) : 0,88€
+- **+ Taxe FR : 2€ + Taxe UE : 3€ = 5€ de taxes**
+- **COGS total : 9,67€**
+- **Marge brute : 10,23€ (51,4%)**
 
 ### Pour 2 sticks à 29,90€
-- COGS total : 8,75€ (shipping ×2, Shopify pondéré)
-- **Marge brute : 21,15€ (70,7%)**
+- COGS hors taxes : 8,75€ (shipping ×2, Shopify pondéré)
+- + Taxe FR (2€ × 2 articles) : 4€ + Taxe UE (1 catégorie) : 3€ = 7€ taxes
+- **COGS total : 15,75€**
+- **Marge brute : 14,15€ (47,3%)**
 
 ### Seuils ROAS CRITIQUES (à utiliser pour TOUS tes diagnostics)
 
 | Niveau | ROAS (1 stick) | ROAS (2 sticks) | CPA max (1 stick) | CPA max (2 sticks) |
 |--------|---------------|----------------|-------------------|---------------------|
-| **Break-even** | **1,31** | 1,41 | 15,23€ | 21,15€ |
-| **Rentabilité min (cible)** | **1,5** | 1,5 | ~13€ | ~20€ |
-| **Rentabilité solide** | 2,0 | 2,0 | ~10€ | ~15€ |
+| **Break-even** | **1,95** | **2,11** | 10,23€ | 14,15€ |
+| **Rentabilité min (cible)** | **2,2** | **2,3** | ~9€ | ~13€ |
+| **Rentabilité solide** | 2,8 | 3,0 | ~7€ | ~10€ |
 
 ### Objectif court terme de Louis
-> **ÊTRE RENTABLE.** Cible ROAS = **1,5**. Tout conseil doit servir cet objectif.
+> **ÊTRE RENTABLE.** Cible ROAS = **2,2 (1 stick)** ou **2,3 (2 sticks)**. Tout conseil doit servir cet objectif.
+> ⚠️ Avant les taxes la cible était 1,5. Avec les taxes import (1er juillet 2026), break-even = 1,95 → cible rentabilité solide = 2,2+.
 
 ### Benchmarks tests passés
 - **Test 2 (16,90€, 7j, 335€ spend)** : ROAS 0,78 / 13 achats / CPA 25,84€ → PAS rentable
