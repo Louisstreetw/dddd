@@ -42,36 +42,34 @@ Le skill `meta-ads-andromeda` contient toute ta méthode. Tu l'invoque automatiq
 - **Sourcing : Chine** (dropshipping)
 - Offre principale : **1 stick à 19,90€** OU **2 sticks à 29,90€**
 
-### ⚠️ TAXES IMPORT — INTÉGRÉES AUX COGS (depuis 2026)
-Louis vend en France des produits venant de Chine → **2 taxes cumulées** sur tout colis < 150€ :
-- **Taxe FR petit colis** : 2€ par article (en vigueur depuis 1er mars 2026)
-- **Taxe UE petit colis** : 3€ par catégorie d'article (en vigueur depuis 1er juillet 2026)
+### ⚠️ TAXES IMPORT — INTÉGRÉES AUX COGS
+Louis vend en France des produits venant de Chine :
+- **Taxe FR petit colis** (2€/article, depuis 1er mars 2026) → **déjà intégrée dans le prix d'achat fournisseur (2,07€)**
+- **Taxe UE petit colis** (3€/catégorie, à partir du 1er juillet 2026) → **+3€ par colis**
 
-Pour un colis de N sticks identiques : **3€ (UE, 1 seule catégorie) + 2€×N (FR, par article)**
+### COGS et marges (offre de référence : 1 stick à 19,90€) — à partir du 1er juillet 2026
+- Produit : 2,07€ (taxe FR incluse) + Shipping : 1,72€ + Frais Shopify (2,9% + 0,30€) : 0,88€
+- **+ Taxe UE : 3€**
+- **COGS total : 7,67€**
+- **Marge brute : 12,23€ (61,5%)**
 
-### COGS et marges (offre de référence : 1 stick à 19,90€)
-- Produit : 2,07€ + Shipping : 1,72€ + Frais Shopify (2,9% + 0,30€) : 0,88€
-- **+ Taxe FR : 2€ + Taxe UE : 3€ = 5€ de taxes**
-- **COGS total : 9,67€**
-- **Marge brute : 10,23€ (51,4%)**
-
-### Pour 2 sticks à 29,90€
-- COGS hors taxes : 8,75€ (shipping ×2, Shopify pondéré)
-- + Taxe FR (2€ × 2 articles) : 4€ + Taxe UE (1 catégorie) : 3€ = 7€ taxes
-- **COGS total : 15,75€**
-- **Marge brute : 14,15€ (47,3%)**
+### Pour 2 sticks à 29,90€ — à partir du 1er juillet 2026
+- COGS hors taxe UE : 8,75€ (shipping ×2, Shopify pondéré)
+- + Taxe UE (1 catégorie, même produit × 2) : 3€
+- **COGS total : 11,75€**
+- **Marge brute : 18,15€ (60,7%)**
 
 ### Seuils ROAS CRITIQUES (à utiliser pour TOUS tes diagnostics)
 
 | Niveau | ROAS (1 stick) | ROAS (2 sticks) | CPA max (1 stick) | CPA max (2 sticks) |
 |--------|---------------|----------------|-------------------|---------------------|
-| **Break-even** | **1,95** | **2,11** | 10,23€ | 14,15€ |
-| **Rentabilité min (cible)** | **2,2** | **2,3** | ~9€ | ~13€ |
-| **Rentabilité solide** | 2,8 | 3,0 | ~7€ | ~10€ |
+| **Break-even** | **1,63** | **1,65** | 12,23€ | 18,15€ |
+| **Rentabilité min (cible)** | **1,8** | **1,8** | ~11€ | ~16€ |
+| **Rentabilité solide** | 2,3 | 2,3 | ~8,5€ | ~13€ |
 
 ### Objectif court terme de Louis
-> **ÊTRE RENTABLE.** Cible ROAS = **2,2 (1 stick)** ou **2,3 (2 sticks)**. Tout conseil doit servir cet objectif.
-> ⚠️ Avant les taxes la cible était 1,5. Avec les taxes import (1er juillet 2026), break-even = 1,95 → cible rentabilité solide = 2,2+.
+> **ÊTRE RENTABLE.** Cible ROAS = **1,8** (1 stick et 2 sticks). Tout conseil doit servir cet objectif.
+> ⚠️ Avec la taxe UE petit colis (+3€/colis dès 1er juillet 2026), break-even est passé de 1,31 à 1,63 → cible rentabilité min = 1,8.
 
 ### Benchmarks tests passés
 - **Test 2 (16,90€, 7j, 335€ spend)** : ROAS 0,78 / 13 achats / CPA 25,84€ → PAS rentable
