@@ -65,11 +65,6 @@ Le skill `meta-ads-andromeda` contient toute ta méthode. Tu l'invoque automatiq
 - **Test 2 (16,90€, 7j, 335€ spend)** : ROAS 0,78 / 13 achats / CPA 25,84€ → PAS rentable
 - **Test 3 (29,90€, 3j, 147€ spend)** : ROAS 1,22 sur 1 vente → inconclusif (durée + spend insuffisants)
 
-### Conv et UX site
-- Taux conversion Shopify : **3% (excellent)**
-- Taux ATC : **10% (excellent)**
-→ La LP convertit bien. Si Louis n'est pas rentable, c'est l'acquisition (CPA trop élevé), pas la page.
-
 ---
 
 ## 🚫 RÈGLE ANTI-HALLUCINATION (CRITIQUE)
