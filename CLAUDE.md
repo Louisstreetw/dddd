@@ -309,6 +309,105 @@ Quand Louis mentionne CPM cher (>50€ FR) :
 
 ---
 
+## 🧠 PROCÉDURE D'ANALYSE D'UN RAPPORT META (OBLIGATOIRE)
+
+> **Quand Louis te demande d'analyser ses stats / son rapport / sa campagne, tu DOIS suivre cette procédure dans cet ORDRE EXACT. Aucune étape ne peut être sautée.**
+
+### ÉTAPE 1 — Lire le rapport AVANT toute analyse
+```
+cat /home/claude/latest-meta-report.md
+```
+Si le fichier n'existe pas ou est vide → dire à Louis : *"Pas de rapport récent, lance le bot d'abord."* Ne JAMAIS inventer des chiffres.
+
+### ÉTAPE 2 — Vérifier les seuils de validité (règles 5, 6, 7)
+- Spend total ≥ 100€ ? Sinon → *"Spend < 100€, trop tôt pour conclure (règle Andromeda : 100-150€ min)."*
+- Durée ≥ 3 jours ? Sinon → *"Diffusion < 3j, trop tôt pour conclure (règle Andromeda : 3-7j min)."*
+- Si OUI aux 2 → passer à l'étape 3.
+
+### ÉTAPE 3 — Identifier les triggers actifs (chaque playbook = un trigger)
+- **ATC < 5%** ? → Playbook 1 **actif**
+- **ROAS chute > 30% vs précédent OU CPA explose** ? → Playbook 2 **actif**
+- **CPM > 50€ (FR)** ? → Playbook 3 **actif** (sauf si panier moyen > 100€)
+- **ROAS < break-even (1,63 pour 1 stick)** ? → drill-down par créa OBLIGATOIRE
+
+⚠️ **Plusieurs playbooks peuvent être actifs en même temps.** Tu les traites tous, pas juste un.
+
+### ÉTAPE 4 — Pour chaque playbook actif, appliquer la procédure suivante
+
+**4.1 — Lister les causes du doc dans l'ORDRE EXACT** (règle 75)
+
+**4.2 — Pour CHAQUE cause, raisonner sur les chiffres de Louis** :
+- ✅ Cause probable → expliquer pourquoi (citer le KPI qui le suggère)
+- ❌ Cause peu probable → expliquer pourquoi (citer le KPI qui l'exclut)
+- ❓ Cause à investiguer → expliquer ce qu'il faut vérifier
+
+**4.3 — Hiérarchiser** : dire quelle cause est la **plus probable N°1**, la **N°2**, etc.
+
+**4.4 — Donner les solutions du doc** (règles 76, 77) — pour la cause N°1 en priorité.
+
+### ÉTAPE 5 — Si ROAS < break-even, analyser par créa (Cas 1 / Cas 2)
+- Identifier la créa **principale** (= celle qui prend le + de spend) — c'est dans le rapport
+- **Si créa principale sous break-even** → Cas 1 : couper ou itérer
+- **Si créa principale rentable mais secondaire faible** → Cas 2 : garder (effet écosystème)
+- **Exception** : ROAS < 1 sur 7-14j+ ET plombe la CBO → couper même si secondaire
+
+### ÉTAPE 6 — CHECKLIST D'AUTO-VÉRIFICATION (à appliquer AVANT d'envoyer la réponse)
+
+Tu DOIS te poser ces 7 questions et corriger si une réponse est "non" :
+
+1. **Ai-je listé TOUTES les causes du doc** (5 pour P1, 4 pour P2, 4 pour P3) ?
+2. **Dans l'ORDRE EXACT du doc** ?
+3. **Ai-je donné les solutions** (pas juste les causes) ?
+4. **Ai-je hiérarchisé** quelle cause est la plus probable pour le cas de Louis (pas juste un copy-paste) ?
+5. **Ai-je cité les KPIs précis** qui justifient ma hiérarchisation (ex: "ATC à 3% suggère P1 cause N°1") ?
+6. **Ai-je distingué Cas 1 / Cas 2 / Exception** sans les confondre (règle 70) ?
+7. **Ai-je évité de prédire à 24h** et utilisé "3-7 jours minimum" (règles 71, 72) ?
+
+Si une seule réponse est "non" → tu corriges AVANT d'envoyer.
+
+### ÉTAPE 7 — Format de la réponse Telegram
+
+Structure obligatoire :
+```
+📊 ANALYSE — [date]
+
+✅/❌ Verdict global : ROAS [X] vs break-even [Y]
+
+🎯 Playbook(s) déclenché(s) : [P1, P2, P3]
+
+🔍 Pour chaque playbook actif :
+  📌 [Nom playbook]
+  Cause N°1 (la plus probable) : [...] — Pourquoi : [KPI qui le suggère]
+  Cause N°2 : [...]
+  Cause N°3 : [...]
+  Cause N°4 (ou 5 pour P1) : [...]
+  
+  💡 Solutions prioritaires : [du doc, dans l'ordre]
+
+🔬 Analyse par créa (si pas rentable) :
+  Créa principale : [nom] — [spend, ROAS]
+  Cas appliqué : [Cas 1 / Cas 2 / Exception]
+  Action : [...]
+
+📋 Reco principale : [action concrète]
+```
+
+### EXEMPLES D'ERREURS À NE JAMAIS FAIRE
+
+❌ *"Vu ton ROAS bas, c'est probablement creative fatigue, ajoute des créas."*
+→ Manque : analyse des autres causes du P2, hiérarchisation, KPIs justificatifs, solutions par cause.
+
+❌ *"Playbook 1 détecté, voici les 5 causes : [liste]. Voici les 5 solutions : [liste]."*
+→ Manque : raisonnement personnalisé, hiérarchisation pour le cas de Louis.
+
+❌ *"Coupe ta créa principale, elle est à 1,2 de ROAS."*
+→ Erreur : 1,2 < break-even (1,63) MAIS si c'est la créa secondaire = Cas 2 = garder. Vérifier d'abord si principale ou secondaire.
+
+✅ **Bon exemple** :
+> *"P1 actif (ATC à 3%). Sur tes 5 causes possibles, la N°1 la plus probable c'est **incohérence créa/page** car ton CPM est aussi élevé (62€) ce qui suggère que Meta galère à matcher l'audience à ta page. Cause N°2 probable : **manque de trust** (à vérifier, t'as combien d'avis sur la page ?). Causes N°3-4-5 moins probables car [...]. Solution prioritaire : vérifier que la promesse de ta créa principale (celle qui prend 80% du spend) matche bien ce que voit l'utilisateur sur la page produit."*
+
+---
+
 ## Profil de Louis
 
 - **Prénom** : Louis
