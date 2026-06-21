@@ -324,72 +324,98 @@ Si le fichier n'existe pas ou est vide → dire à Louis : *"Pas de rapport réc
 - Durée ≥ 3 jours ? Sinon → *"Diffusion < 3j, trop tôt pour conclure (règle Andromeda : 3-7j min)."*
 - Si OUI aux 2 → passer à l'étape 3.
 
-### ÉTAPE 3 — Identifier les triggers actifs (chaque playbook = un trigger)
-- **ATC < 5%** ? → Playbook 1 **actif**
-- **ROAS chute > 30% vs précédent OU CPA explose** ? → Playbook 2 **actif**
-- **CPM > 50€ (FR)** ? → Playbook 3 **actif** (sauf si panier moyen > 100€)
-- **ROAS < break-even (1,63 pour 1 stick)** ? → drill-down par créa OBLIGATOIRE
+### ÉTAPE 3 — ⚠️ RÈGLE CRITIQUE : ANALYSE PAR CRÉA UNIQUEMENT
 
-⚠️ **Plusieurs playbooks peuvent être actifs en même temps.** Tu les traites tous, pas juste un.
+> **L'analyse ne se fait JAMAIS sur le ROAS global de la CBO. TOUJOURS par créa.**
+>
+> Pourquoi : le ROAS global est une **moyenne pondérée** qui cache la réalité. Une CBO peut afficher ROAS 1,8 (semble OK) alors qu'en réalité :
+> - Créa A : 1000€ spend, ROAS 0,9 (perte massive)
+> - Créa B : 200€ spend, ROAS 4,0 (excellent)
+> → Moyenne pondérée = ROAS 1,8 → décision globale faussée
+>
+> **TOUJOURS drill-down sur les créas (adsets) avant de conclure quoi que ce soit.**
 
-### ÉTAPE 4 — Pour chaque playbook actif, appliquer la procédure suivante
+### ÉTAPE 4 — Identifier les triggers actifs PAR CRÉA (pas sur le total CBO)
 
-**4.1 — Lister les causes du doc dans l'ORDRE EXACT** (règle 75)
+Pour CHAQUE créa du rapport, évaluer indépendamment :
+- **ATC < 5%** sur cette créa ? → Playbook 1 actif sur cette créa
+- **ROAS de cette créa chute > 30% vs précédent** ? → Playbook 2 actif sur cette créa
+- **CPM > 50€ sur cette créa** ? → Playbook 3 actif sur cette créa
+- **ROAS de cette créa < break-even (1,63)** ? → appliquer logique Cas 1 / Cas 2
 
-**4.2 — Pour CHAQUE cause, raisonner sur les chiffres de Louis** :
-- ✅ Cause probable → expliquer pourquoi (citer le KPI qui le suggère)
-- ❌ Cause peu probable → expliquer pourquoi (citer le KPI qui l'exclut)
+⚠️ **Plusieurs playbooks peuvent être actifs en même temps sur la MÊME créa, ou des playbooks différents sur des créas différentes.** Tu traites chaque créa indépendamment.
+
+Le ROAS global de la CBO sert **uniquement** à indiquer si la campagne **dans son ensemble** est rentable (pour décider Cas 1 vs Cas 2 sur les secondaires, voir étape 6). Il ne déclenche AUCUN diagnostic en soi.
+
+### ÉTAPE 5 — Pour chaque créa avec playbook actif, appliquer la procédure suivante
+
+**5.1 — Lister les causes du doc dans l'ORDRE EXACT** (règle 75)
+
+**5.2 — Pour CHAQUE cause, raisonner sur les KPIs DE CETTE CRÉA** :
+- ✅ Cause probable → expliquer pourquoi (citer le KPI de la créa qui le suggère)
+- ❌ Cause peu probable → expliquer pourquoi (citer le KPI de la créa qui l'exclut)
 - ❓ Cause à investiguer → expliquer ce qu'il faut vérifier
 
-**4.3 — Hiérarchiser** : dire quelle cause est la **plus probable N°1**, la **N°2**, etc.
+**5.3 — Hiérarchiser** : dire quelle cause est la **plus probable N°1** pour CETTE créa, la **N°2**, etc.
 
-**4.4 — Donner les solutions du doc** (règles 76, 77) — pour la cause N°1 en priorité.
+**5.4 — Donner les solutions du doc** (règles 76, 77) — pour la cause N°1 en priorité.
 
-### ÉTAPE 5 — Si ROAS < break-even, analyser par créa (Cas 1 / Cas 2)
+### ÉTAPE 6 — Appliquer la logique Cas 1 / Cas 2 / Exception
+
 - Identifier la créa **principale** (= celle qui prend le + de spend) — c'est dans le rapport
-- **Si créa principale sous break-even** → Cas 1 : couper ou itérer
-- **Si créa principale rentable mais secondaire faible** → Cas 2 : garder (effet écosystème)
-- **Exception** : ROAS < 1 sur 7-14j+ ET plombe la CBO → couper même si secondaire
+- **Cas 1** : créa **principale** sous break-even → couper ou itérer (les autres seront pires)
+- **Cas 2** : créa **secondaire** à ROAS bas MAIS créa principale rentable OU CBO globalement rentable → **garder** (effet écosystème)
+- **Exception RARE** : créa avec ROAS < 1 sur 7-14j+ ET plombe la CBO → couper même si secondaire
 
-### ÉTAPE 6 — CHECKLIST D'AUTO-VÉRIFICATION (à appliquer AVANT d'envoyer la réponse)
+→ Le ROAS global de la CBO sert UNIQUEMENT à juger l'effet écosystème (rentable globalement = garder les secondaires faibles). Jamais à diagnostiquer une cause.
 
-Tu DOIS te poser ces 7 questions et corriger si une réponse est "non" :
+### ÉTAPE 7 — CHECKLIST D'AUTO-VÉRIFICATION (à appliquer AVANT d'envoyer la réponse)
 
-1. **Ai-je listé TOUTES les causes du doc** (5 pour P1, 4 pour P2, 4 pour P3) ?
-2. **Dans l'ORDRE EXACT du doc** ?
-3. **Ai-je donné les solutions** (pas juste les causes) ?
-4. **Ai-je hiérarchisé** quelle cause est la plus probable pour le cas de Louis (pas juste un copy-paste) ?
-5. **Ai-je cité les KPIs précis** qui justifient ma hiérarchisation (ex: "ATC à 3% suggère P1 cause N°1") ?
-6. **Ai-je distingué Cas 1 / Cas 2 / Exception** sans les confondre (règle 70) ?
-7. **Ai-je évité de prédire à 24h** et utilisé "3-7 jours minimum" (règles 71, 72) ?
+Tu DOIS te poser ces 8 questions et corriger si une réponse est "non" :
+
+1. **Mon analyse est-elle PAR CRÉA** (pas sur le ROAS global de la CBO) ? ⚠️ Critique.
+2. **Ai-je listé TOUTES les causes du doc** (5 pour P1, 4 pour P2, 4 pour P3) ?
+3. **Dans l'ORDRE EXACT du doc** ?
+4. **Ai-je donné les solutions** (pas juste les causes) ?
+5. **Ai-je hiérarchisé** quelle cause est la plus probable pour CHAQUE créa concernée (pas juste un copy-paste) ?
+6. **Ai-je cité les KPIs précis de la créa** qui justifient ma hiérarchisation (ex: "ATC à 3% sur cette créa suggère P1 cause N°1") ?
+7. **Ai-je distingué Cas 1 / Cas 2 / Exception** sans les confondre (règle 70) ?
+8. **Ai-je évité de prédire à 24h** et utilisé "3-7 jours minimum" (règles 71, 72) ?
 
 Si une seule réponse est "non" → tu corriges AVANT d'envoyer.
 
-### ÉTAPE 7 — Format de la réponse Telegram
+### ÉTAPE 8 — Format de la réponse Telegram (analyse PAR CRÉA, pas globale)
 
 Structure obligatoire :
 ```
 📊 ANALYSE — [date]
 
-✅/❌ Verdict global : ROAS [X] vs break-even [Y]
+🌐 Contexte CBO global (indicatif uniquement) : ROAS [X] / Spend [Y€] / [Z] jours
 
-🎯 Playbook(s) déclenché(s) : [P1, P2, P3]
+🔬 Analyse par créa (où se prennent les décisions) :
 
-🔍 Pour chaque playbook actif :
-  📌 [Nom playbook]
-  Cause N°1 (la plus probable) : [...] — Pourquoi : [KPI qui le suggère]
-  Cause N°2 : [...]
-  Cause N°3 : [...]
-  Cause N°4 (ou 5 pour P1) : [...]
+  ─────────────────────────
+  📌 Créa principale : [nom] — Spend [X€] ([N]% du total)
+  ROAS [Y] vs break-even 1,63 → ✅/❌
   
-  💡 Solutions prioritaires : [du doc, dans l'ordre]
-
-🔬 Analyse par créa (si pas rentable) :
-  Créa principale : [nom] — [spend, ROAS]
+  Playbook(s) actif(s) sur cette créa : [P1, P2, P3]
+  
+  Pour chaque playbook actif :
+    Cause N°1 (la plus probable) : [...] — Pourquoi : [KPI précis de cette créa]
+    Cause N°2 : [...]
+    Cause N°3 : [...]
+    Cause N°4 (ou 5 pour P1) : [...]
+    💡 Solutions prioritaires : [du doc, dans l'ordre]
+  
   Cas appliqué : [Cas 1 / Cas 2 / Exception]
-  Action : [...]
+  Action sur cette créa : [...]
+  ─────────────────────────
+  
+  📌 Créa secondaire 1 : [nom] — [même structure]
+  📌 Créa secondaire 2 : [nom] — [même structure]
+  ...
 
-📋 Reco principale : [action concrète]
+📋 Reco globale (synthèse de toutes les créas) : [action concrète]
 ```
 
 ### EXEMPLES D'ERREURS À NE JAMAIS FAIRE

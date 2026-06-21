@@ -268,10 +268,11 @@ def get_campaign_state(campaign_id, state, k, first_seen_str):
 def fmt_kpis(k):
     if not k:
         return "Aucune donnée"
-    verdict = "✅ Rentable" if k["roas"] >= BREAK_EVEN_1STICK else "❌ Sous break-even (1,63)"
+    # ⚠️ Le ROAS global est INDICATIF (contexte CBO). Décisions = par créa uniquement.
     return (
+        f"_(contexte CBO global — décisions à prendre par créa ↓)_\n"
         f"Spend 3j: {k['spend']:.2f}€ | Achats: {k['achats']}\n"
-        f"ROAS: {k['roas']:.2f} {verdict} | CPA: {k['cpa']:.2f}€ (max {CPA_MAX_VIABLE}€)\n"
+        f"ROAS global: {k['roas']:.2f} | CPA: {k['cpa']:.2f}€\n"
         f"CPM: {k['cpm']:.2f}€ | CPC: {k['cpc']:.2f}€ | CTR: {k['ctr']:.2f}%"
     )
 
@@ -293,7 +294,7 @@ def fmt_playbook(pb):
 def fmt_adsets(adsets_data):
     if not adsets_data:
         return "Aucune créa active."
-    out = ["\n🔍 *Analyse par créa* (campagne sous break-even) :"]
+    out = ["\n🔍 *Analyse par créa* (toujours — jamais sur le ROAS global CBO) :"]
     adsets_data.sort(key=lambda x: x[1]["spend"] if x[1] else 0, reverse=True)
     total = sum((k["spend"] for _, k in adsets_data if k), 0)
     for i, (adset, k) in enumerate(adsets_data):
@@ -382,9 +383,10 @@ def main(mode="daily"):
         # Détection playbooks
         playbooks = detect_playbooks(global_k, previous) if state_name != "INCUBATION" else []
 
-        # Analyse par créa si pas rentable
+        # Analyse par créa TOUJOURS (jamais sur le ROAS global qui cache tout)
+        # Règle Andromeda : décisions se prennent par créa, pas sur la moyenne pondérée CBO
         adsets_data = []
-        if state_name != "INCUBATION" and global_k and global_k["roas"] < BREAK_EVEN_1STICK:
+        if state_name != "INCUBATION":
             adsets = get_active_adsets(cid)
             adsets_data = [(a, parse_insights(get_insights(a["id"]))) for a in adsets]
 
