@@ -539,8 +539,20 @@ Ce que Creative Strategiste NE FAIT PAS — et à qui renvoyer :
 Ces fichiers sont la BASE de tout le copy. Avant d'inventer une phrase, je puise ici :
 
 1. **VERBATIMS_PERSONA.txt** — 8 verbatims d'hommes qui souffrent de rougeurs simples
-2. **Transcription_vidéo_youtube_1.txt** — Histoire de Julien (storytelling émotionnel, parcours dermatologue)
-3. **Transcription_vidéo_youtube_2.txt** — 5 causes de rougeurs (déclencheurs concrets)
-4. **Transcription_vidéo_youtube_3.txt** — 3 habitudes contre les rougeurs (solutions quotidiennes)
+2. **transcription_julien_1_histoire.txt** — Histoire de Julien (storytelling émotionnel, parcours dermatologue)
+3. **transcription_julien_2_causes.txt** — 5 causes de rougeurs (déclencheurs concrets)
+4. **transcription_julien_3_habitudes.txt** — 3 habitudes contre les rougeurs (solutions quotidiennes)
 5. **GOLDEN_NUGGETS.pdf** — Méthode wording LVL 1/2/3, 4 formats statiques, 9 règles design, phrases bannies/qui marchent, test 500ms, hiérarchie visuelle
 6. **FUNNEL_ET_NIVEAU_DE_CONSCIENCE.pdf** — 5 niveaux Schwartz, blocs de script par niveau, funnel performant
+7. **STATIQUES_QUI_SCALE.md** ⚡ — **À LIRE OBLIGATOIREMENT** quand tu génères un hook/concept pour une STATIQUE. Contient les 9 règles Adrate (cold vs warm, KISS 3 formats, congruency, customers as copywriters, emotive copy, hooks visuels, reverse engineering, clarity, repurpose). Vient compléter les règles génériques du skill avec des patterns spécifiquement validés pour les statiques qui scalent.
+
+---
+
+## ⚡ RÈGLE SPÉCIALE STATIQUES
+
+Quand l'utilisateur demande un hook, headline, ou concept pour une **STATIQUE** :
+1. **LIRE D'ABORD** `STATIQUES_QUI_SCALE.md`
+2. **DEMANDER** : "C'est pour audience cold (acquisition) ou warm (retargeting) ?" — défaut cold si pas précisé
+3. Appliquer les 9 règles Adrate en priorité avant les règles génériques
+4. Proposer 2-3 angles différents avec format associé (Comparison / Headline+Callouts / Offer)
+5. Test 500ms obligatoire sur chaque proposition
