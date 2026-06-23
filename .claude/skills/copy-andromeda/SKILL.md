@@ -544,15 +544,23 @@ Ces fichiers sont la BASE de tout le copy. Avant d'inventer une phrase, je puise
 4. **transcription_julien_3_habitudes.txt** — 3 habitudes contre les rougeurs (solutions quotidiennes)
 5. **GOLDEN_NUGGETS.pdf** — Méthode wording LVL 1/2/3, 4 formats statiques, 9 règles design, phrases bannies/qui marchent, test 500ms, hiérarchie visuelle
 6. **FUNNEL_ET_NIVEAU_DE_CONSCIENCE.pdf** — 5 niveaux Schwartz, blocs de script par niveau, funnel performant
-7. **STATIQUES_QUI_SCALE.md** ⚡ — **À LIRE OBLIGATOIREMENT** quand tu génères un hook/concept pour une STATIQUE. Contient les 9 règles Adrate (cold vs warm, KISS 3 formats, congruency, customers as copywriters, emotive copy, hooks visuels, reverse engineering, clarity, repurpose). Vient compléter les règles génériques du skill avec des patterns spécifiquement validés pour les statiques qui scalent.
+7. **STATIQUES_QUI_SCALE.md** ⚡ — **À LIRE OBLIGATOIREMENT** quand tu génères un hook/concept pour une STATIQUE. Contient les 9 règles Adrate (cold vs warm, KISS 3 formats, congruency, customers as copywriters, emotive copy, hooks visuels, reverse engineering, clarity, repurpose).
+8. **PSYCHOLOGIE_COPY.md** 🧠 — **À LIRE OBLIGATOIREMENT** pour TOUT copy. Contient les 5 leviers émotionnels (rêves/échecs/peurs/soupçons/ennemi), les 5 niveaux de sophistication du marché (Schwartz), le concept de mécanisme unique, la règle de congruence interne ad, la formule Hormozi (Dream / Probabilité / Temps / Effort), le test lecture à voix haute.
 
 ---
 
-## ⚡ RÈGLE SPÉCIALE STATIQUES
+## ⚡ RÈGLES SPÉCIALES
 
-Quand l'utilisateur demande un hook, headline, ou concept pour une **STATIQUE** :
-1. **LIRE D'ABORD** `STATIQUES_QUI_SCALE.md`
-2. **DEMANDER** : "C'est pour audience cold (acquisition) ou warm (retargeting) ?" — défaut cold si pas précisé
-3. Appliquer les 9 règles Adrate en priorité avant les règles génériques
+### Pour TOUT copy (statique, vidéo, ad copy)
+1. **LIRE** `PSYCHOLOGIE_COPY.md` → vérifier que le copy active au moins 1 des 5 leviers émotionnels
+2. **Identifier** le niveau de sophistication du marché (par défaut N2-N3 pour stick anti-rougeurs FR)
+3. **Vérifier congruence interne** : Hook + Body + CTA = même niveau d'awareness
+4. **Appliquer Hormozi** sur chaque value prop : ↑ dream / ↑ probabilité / ↓ temps / ↓ effort
+5. **Test lecture à voix haute** : ça sonne pub ou humain ?
+
+### Pour les STATIQUES spécifiquement
+1. **LIRE** `STATIQUES_QUI_SCALE.md` en plus
+2. **DEMANDER** : "Cold (acquisition) ou warm (retargeting) ?" — défaut cold
+3. Appliquer les 9 règles Adrate
 4. Proposer 2-3 angles différents avec format associé (Comparison / Headline+Callouts / Offer)
-5. Test 500ms obligatoire sur chaque proposition
+5. Test 500ms obligatoire
