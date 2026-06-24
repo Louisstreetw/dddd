@@ -44,13 +44,12 @@ cat /home/claude-copy/.claude/skills/copy-andromeda/STATIQUES_QUI_SCALE.md
 ### 🥈 Sources de WORDING (pour piocher les Golden Nuggets bruts)
 
 ```
-cat /home/claude-copy/.claude/skills/copy-andromeda/VERBATIMS_PERSONA.txt
 cat /home/claude-copy/.claude/skills/copy-andromeda/transcription_julien_1_histoire.txt
 cat /home/claude-copy/.claude/skills/copy-andromeda/transcription_julien_2_causes.txt
 cat /home/claude-copy/.claude/skills/copy-andromeda/transcription_julien_3_habitudes.txt
 ```
 
-→ TOUT le wording doit être puisé ici, JAMAIS inventé.
+→ TOUT le wording doit être puisé ici, JAMAIS inventé. Julien EST le persona qui parle face caméra avec son vocabulaire naturel.
 
 ### 🥉 Source de référence
 
@@ -77,7 +76,7 @@ tail -n 100 /home/claude-copy/journal-recent.md
 - Émotions : on me prend pour quelqu'un qui a bu / qui est gêné / en surchauffe — frein dans relations, moqueries, isolement, évitement miroirs
 - Désirs : peau **normale**, ne plus être vu comme ça, confiance, discrétion (pas l'air de porter du maquillage)
 
-**Détail complet** : voir VERBATIMS_PERSONA.txt + 3 transcriptions Julien.
+**Détail complet** : voir les 3 transcriptions Julien.
 
 ---
 
@@ -100,7 +99,7 @@ tail -n 100 /home/claude-copy/journal-recent.md
    - Format demandé (statique / vidéo / VSL / autre)
    - Audience : **cold** (acquisition) ou **warm** (retargeting) — défaut cold si pas précisé
 
-3. **PUISER** dans les sources de wording (VERBATIMS_PERSONA + transcriptions Julien) avant d'inventer une seule phrase
+3. **PUISER** dans les 3 transcriptions Julien (le persona qui parle face caméra) avant d'inventer une seule phrase
 
 4. **APPLIQUER** les 5 leviers émotionnels (au moins 1 par copy) :
    - Encourager les rêves / Justifier les échecs / Apaiser les peurs / Confirmer les soupçons / Blâmer un ennemi
@@ -126,7 +125,7 @@ tail -n 100 /home/claude-copy/journal-recent.md
 | ✅ **TOUJOURS** lire PSYCHOLOGIE_COPY + STATIQUES_QUI_SCALE avant de produire | Sinon copy générique |
 | ✅ **TOUJOURS** identifier awareness + sophistication AVANT de produire | Sans ça le copy rate sa cible |
 | ✅ **TOUJOURS** activer au moins 1 des 5 leviers émotionnels | Sinon le copy est plat |
-| ✅ **TOUJOURS** puiser le wording dans les verbatims/Julien | Tes phrases inventées = mortes |
+| ✅ **TOUJOURS** puiser le wording dans les transcriptions Julien | Tes phrases inventées = mortes |
 | ✅ **TOUJOURS** vérifier congruence Hook ↔ Body ↔ CTA | Awareness aligné |
 | ✅ **TOUJOURS** appliquer Hormozi sur les value props | Pousse les 4 curseurs |
 | ✅ **TOUJOURS** test 500ms sur les statiques | Qu'est-ce que c'est + en quoi ça m'aide |
