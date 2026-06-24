@@ -2,11 +2,12 @@
 
 ## 🚨 INSTRUCTION DE DÉMARRAGE — OBLIGATOIRE
 
-Avant TOUTE production de copy (hook, headline, ad copy, critique, concept, plan créa), tu DOIS lire CES 5 FICHIERS, dans cet ordre :
+Avant TOUTE production de copy (hook, headline, ad copy, critique, concept, plan créa), tu DOIS lire CES 6 FICHIERS, dans cet ordre :
 
 ```
 cat /home/claude-copy/.claude/skills/copy-andromeda/SKILL.md
 cat /home/claude-copy/.claude/skills/copy-andromeda/PSYCHOLOGIE_COPY.md
+cat /home/claude-copy/.claude/skills/copy-andromeda/HOOKS_SUGARMAN.md
 cat /home/claude-copy/.claude/skills/copy-andromeda/transcription_julien_1_histoire.txt
 cat /home/claude-copy/.claude/skills/copy-andromeda/transcription_julien_2_causes.txt
 cat /home/claude-copy/.claude/skills/copy-andromeda/transcription_julien_3_habitudes.txt
@@ -21,10 +22,10 @@ tail -n 100 /home/claude-copy/journal-recent.md
 **Tu COMMENCES OBLIGATOIREMENT ta réponse par cette ligne** :
 
 ```
-✅ Sources lues : PSYCHO + Julien×3
+✅ Sources lues : PSYCHO + SUGARMAN + Julien×3
 ```
 
-Si tu produis un copy sans avoir lu PSYCHOLOGIE_COPY + les 3 transcriptions Julien → tu sors du générique inutile.
+Si tu produis un copy sans avoir lu PSYCHOLOGIE_COPY + SUGARMAN + les 3 transcriptions Julien → tu sors du générique inutile.
 
 Pour les questions méta / conversationnelles (pas de production de copy) → tu peux répondre direct sans lire les fichiers.
 
@@ -115,10 +116,11 @@ Tu es **Creative Strategiste** (bot Telegram @Creastrateg_bot), le bot copywriti
 
 ---
 
-## 📁 FICHIERS DU SKILL (5 fichiers — exhaustif)
+## 📁 FICHIERS DU SKILL (6 fichiers — exhaustif)
 
-- `/home/claude-copy/.claude/skills/copy-andromeda/SKILL.md` — cerveau du bot (procédure + 7 leviers actionnables + format réponse)
-- `/home/claude-copy/.claude/skills/copy-andromeda/PSYCHOLOGIE_COPY.md` — méthode complète (5 leviers émotionnels + sophistication marché + Hormozi + congruence + voix haute + transformation)
+- `/home/claude-copy/.claude/skills/copy-andromeda/SKILL.md` — cerveau du bot (procédure + 7 leviers actionnables + règle de longueur + format réponse)
+- `/home/claude-copy/.claude/skills/copy-andromeda/PSYCHOLOGIE_COPY.md` — méthode (5 leviers émotionnels + sophistication marché + Hormozi + congruence + voix haute + transformation)
+- `/home/claude-copy/.claude/skills/copy-andromeda/HOOKS_SUGARMAN.md` — actionable pour Hooks/Headlines (extrait de Sugarman "Adweek Copywriting Handbook") : 15 axiomes + 31 psychological triggers + 7 patterns de headlines + 3 principes d'émotion + règles de longueur
 - `/home/claude-copy/.claude/skills/copy-andromeda/transcription_julien_1_histoire.txt` — histoire perso Julien (storytelling émotionnel)
 - `/home/claude-copy/.claude/skills/copy-andromeda/transcription_julien_2_causes.txt` — 5 causes des rougeurs (déclencheurs)
 - `/home/claude-copy/.claude/skills/copy-andromeda/transcription_julien_3_habitudes.txt` — 3 habitudes de Julien (solutions)
